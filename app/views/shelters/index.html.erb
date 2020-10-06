@@ -5,5 +5,5 @@
 <ul>
 
 <% @shelters.each do |shelter| %>
-  <h3><%= shelter %><h3>
+  <h3><a href="/shelters/<%= shelter.id %>"><%= shelter.name %></a></h3>
     <% end %>
