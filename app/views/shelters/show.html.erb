@@ -1,0 +1,24 @@
+<a href="/shelters">Back</a>
+
+<h2><%= @shelter.name %></h2>
+<p>Shelter ID:  <%= @shelter.id%> </p>
+<br>
+<h4>Shelter Location</h4>
+<table>
+  <tr>
+    <td>Address:</td>
+    <td><%= @shelter.address %></td>
+  </tr>
+  <tr>
+    <td>City:</td>
+    <td><%= @shelter.city %></td>
+  </tr>
+  <tr>
+    <td>State:</td>
+    <td><%= @shelter.state %></td>
+  </tr>
+  <tr>
+    <td>Zip:</td>
+    <td><%= @shelter.zip %></td>
+  </tr>
+</table>

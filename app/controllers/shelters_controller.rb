@@ -4,15 +4,13 @@ class SheltersController < ApplicationController
   end
 
   def show
-    require "pry"; binding.pry
-    @shelters.find(params[:id])
+    @shelter = Shelter.find(params[:id])
   end
 
   def new
   end
 
   def create
-    require "pry"; binding.pry
     shelter = Shelter.new({
     name: params[:shelter][:name],
     address: params[:shelter][:address],
@@ -20,7 +18,9 @@ class SheltersController < ApplicationController
     state: params[:shelter][:state],
     zip: params[:shelter][:zip]
     })
+    require "pry"; binding.pry
     shelter.save
+    require "pry"; binding.pry
     redirect_to '/shelters'
   end
 end
