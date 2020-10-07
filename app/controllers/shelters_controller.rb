@@ -18,9 +18,7 @@ class SheltersController < ApplicationController
     state: params[:shelter][:state],
     zip: params[:shelter][:zip]
     })
-    require "pry"; binding.pry
     shelter.save
-    require "pry"; binding.pry
     redirect_to '/shelters'
   end
 end
