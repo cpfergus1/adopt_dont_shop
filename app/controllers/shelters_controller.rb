@@ -39,6 +39,4 @@ class SheltersController < ApplicationController
     redirect_to "/shelters/#{shelter.id}"
   end
 
-  def delete
-    Shelter.delete
 end
