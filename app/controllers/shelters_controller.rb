@@ -4,6 +4,7 @@ class SheltersController < ApplicationController
   end
 
   def show
+    require "pry"; binding.pry
     @shelters.find(params[:id])
   end
 
@@ -11,12 +12,13 @@ class SheltersController < ApplicationController
   end
 
   def create
-    task = Task.new({
-    name: params[:shelters][:name],
-    address: params[:shelters][:address],
-    city: params[:shelters][:city],
-    state: params[:shelters][:state],
-    zip: params[:shelters][:zip]
+    require "pry"; binding.pry
+    shelter = Shelter.new({
+    name: params[:shelter][:name],
+    address: params[:shelter][:address],
+    city: params[:shelter][:city],
+    state: params[:shelter][:state],
+    zip: params[:shelter][:zip]
     })
     shelter.save
     redirect_to '/shelters'

@@ -1,0 +1,28 @@
+<head>
+  <style>
+    label{
+    display: inline-block;
+    float: left;
+    clear: left;
+    width: 75px;
+    text-align: left; /*Change to right here if you want it close to the inputs*/
+}
+input {
+  display: inline-block;
+  float: left;
+}
+</style>
+</head>
+
+<a href="/shelters">Back</a>
+
+<form action="/shelters" method="post">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  <p>Enter a new Shelter:</p>
+  <label>Name:</label><input type='text' name='shelter[name]'/><br>
+  <label>Address:</label><input type='text' name ='shelter[address]'><br>
+  <label>City:</label><input type='text' name ='shelter[city]'/><br>
+  <label>State:</label><input type='text' name ='shelter[state]'/><br>
+  <label>Zip:</label><input type='text' name ='shelter[zip]'/><br>
+  <label></label><input type='submit'/>
+</form>
