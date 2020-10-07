@@ -1,8 +1,10 @@
 <a href="/shelters">Back</a>
 
+
 <h2><%= @shelter.name %></h2>
-<p>Shelter ID:  <%= @shelter.id%> </p>
-<br>
+<p style="padding: 0px" >Shelter ID:  <%= @shelter.id%><br>
+<a href="/shelters/<%=@shelter.id%>" data-method="delete">Delete Shelter</a></p>
+<br><br>
 <h4>Shelter Location</h4>
 <table>
   <tr>
