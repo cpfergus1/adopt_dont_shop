@@ -1,0 +1,20 @@
+<head>
+  <%= csrf_meta_tags %>
+
+  <%= stylesheet_link_tag    'application', media: 'all' %>
+  <%= javascript_include_tag 'application' %>
+</head>
+
+<p><a href="/">Home</a><br>
+<a href="/pets/new">Add A New Pet</a></p><br><br>
+<h2>Pets</h2>
+
+<% @pets.each do |pet| %>
+    <img src=<%="#{pet.image}"%> alt=<%= "#{pet.name}" %> height=100 width=100><br>
+  <p><a href="/pets/<%= pet.id %>"><%= pet.name %></a><br>
+    <%= "Description: #{pet.description}" %><br>
+    <%= "Age:         #{pet.age}" %><br>
+    <%= "Sex:         #{pet.sex}" %><br>
+    <%= "Availability Status: #{pet.status}" %><br></p>
+    <br><br>
+    <% end %>

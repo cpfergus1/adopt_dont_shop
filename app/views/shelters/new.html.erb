@@ -1,17 +1,8 @@
 <head>
-  <style>
-    label{
-    display: inline-block;
-    float: left;
-    clear: left;
-    width: 75px;
-    text-align: left; /*Change to right here if you want it close to the inputs*/
-}
-input {
-  display: inline-block;
-  float: left;
-}
-</style>
+  <%= csrf_meta_tags %>
+
+  <%= stylesheet_link_tag    'application', media: 'all' %>
+  <%= javascript_include_tag 'application' %>
 </head>
 
 <a href="/shelters">Back</a>
