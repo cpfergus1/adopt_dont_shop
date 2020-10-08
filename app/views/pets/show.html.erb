@@ -1,0 +1,34 @@
+<head>
+  <%= csrf_meta_tags %>
+
+  <%= stylesheet_link_tag    'application', media: 'all' %>
+  <%= javascript_include_tag 'application' %>
+</head>
+
+<a href="/shelters">Back</a><br><br>
+
+<img src=<%="#{@pet.image}"%> alt=<%= "#{@pet.name}" %> height=200 width=200><br>
+<h2><%= @pet.name %></h2>
+<p style="padding: 0px" >Pet ID:  <%= @pet.id%><br>
+<a href="/pets/<%=@pet.id%>" data-method="delete">Delete Pet</a></p>
+<br><br>
+<table>
+  <tr>
+    <td>Desciption: </td>
+    <td><%= @pet.description %></td>
+  </tr>
+  <tr>
+    <td>Approximate Age:</td>
+    <td><%= @pet.age %></td>
+  </tr>
+  <tr>
+    <td>Sex:</td>
+    <td><%= @pet.sex %></td>
+  </tr>
+  <tr>
+    <td>Adoptable Status:</td>
+    <td><%= @pet.status %></td>
+  </tr>
+</table>
+<br>
+<a href="/pets/<%= @pet.id %>/edit">Edit</a>
