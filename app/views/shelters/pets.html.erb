@@ -5,31 +5,14 @@
   <%= javascript_include_tag 'application' %>
 </head>
 
-<a href="/shelters">Back</a>
+<p><a href="/">Home</a><br>
+<a href="/pets/new">Add A New Pet</a></p><br><br>
+<h2>Pets</h2>
 
-
-<h2><%= @pet.name %></h2>
-<p style="padding: 0px" >Shelter ID:  <%= @pet.id%><br>
-<a href="/pets/<%=@pet.id%>" data-method="delete">Delete Shelter</a></p>
-<br><br>
-<h4>Shelter Location</h4>
-<table>
-  <tr>
-    <td>Address:</td>
-    <td><%= @pet.address %></td>
-  </tr>
-  <tr>
-    <td>City:</td>
-    <td><%= @pet.city %></td>
-  </tr>
-  <tr>
-    <td>State:</td>
-    <td><%= @pet.state %></td>
-  </tr>
-  <tr>
-    <td>Zip:</td>
-    <td><%= @pet.zip %></td>
-  </tr>
-</table>
-<br>
-<a href="/pets/<%= @shelter.id %>/edit">Edit</a>
+<% @pets.each do |pet| %>
+    <img src=<%="#{pet.image}"%> alt=<%= "#{pet.name}" %> height=100 width=100><br>
+  <p><a href="/pets/<%= pet.id %>"><%= pet.name %></a><br>
+    <%= "Age:         #{pet.age}" %><br>
+    <%= "Sex:         #{pet.sex}" %><br>
+    <br><br>
+    <% end %>

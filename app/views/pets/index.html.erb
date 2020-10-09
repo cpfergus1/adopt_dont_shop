@@ -6,7 +6,7 @@
 </head>
 
 <p><a href="/">Home</a><br>
-<a href="/pets/new">Add A New Pet</a></p><br><br>
+
 <h2>Pets</h2>
 
 <% @pets.each do |pet| %>
@@ -15,6 +15,6 @@
     <%= "Description: #{pet.description}" %><br>
     <%= "Age:         #{pet.age}" %><br>
     <%= "Sex:         #{pet.sex}" %><br>
-    <%= "Availability Status: #{pet.status}" %><br></p>
+    "Shelter: <a href="/shelters/<%= pet.shelter.id %>"><%= pet.shelter.name %></a> <br></p>
     <br><br>
     <% end %>
