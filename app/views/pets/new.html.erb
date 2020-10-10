@@ -1,0 +1,23 @@
+<head>
+  <%= csrf_meta_tags %>
+
+  <%= stylesheet_link_tag    'application', media: 'all' %>
+  <%= javascript_include_tag 'application' %>
+</head>
+
+<a href="/shelters/<%= @shelter.id %>/pets">Back</a>
+
+<form action="/shelters/<%= @shelter.id %>/pets" method="post">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  <input type='hidden' name="_method" value='POST'>
+  <input type="hidden" name="pet[shelter_id]" value="<%= @shelter.id %>">
+  <p>Enter a new Pet:</p>
+  <label>Name:</label><input type='text' name='pet[name]'/><br>
+  <label>Image Url:</label><input type='text' name ='pet[image]'><br>
+  <label>Description:</label><textarea name ='pet[description]'/><br>
+  <label>Age:</label><input type='text' name ='pet[age]'/><br>
+  <label>Sex:</label><select id='sex' name ='pet[sex]'>
+    <option value ="male">Male</option>
+    <option value ="female">Female</option></select><br><br>
+  <label></label><input type='submit' value="Create Pet"/>
+</form>
