@@ -29,4 +29,22 @@ class PetsController < ApplicationController
     redirect_to '/pets'
   end
 
+  def edit
+
+    @pet = Pet.find(params[:id])
+    @shelter = @pet.shelter
+  end
+
+  def update
+    pet = Pet.find(params[:id])
+    pet.update({
+      name: params[:pet][:name],
+      image: params[:pet][:image],
+      age: params[:pet][:age],
+      sex: params[:pet][:sex],
+      description: params[:pet][:description]
+      })
+    pet.save
+    redirect_to "/pets/#{pet.id}"
+  end
 end

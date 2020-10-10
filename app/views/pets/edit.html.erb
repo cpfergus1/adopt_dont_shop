@@ -1,0 +1,24 @@
+<head>
+  <%= csrf_meta_tags %>
+
+  <%= stylesheet_link_tag    'application', media: 'all' %>
+  <%= javascript_include_tag 'application' %>
+</head>
+
+<a href="/pets/<%= @pet.id %>">Back</a>
+<a href="/pets/<%=@pet.id%>" data-method="delete">Delete Pet</a></p>
+
+<form action="/pets/<%= @pet.id %>" method="post">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  <input type="hidden" name="_method" value="PATCH">
+
+  <p>Edit Pet Details:</p>
+  <label>Name:</label><input type='text' name='pet[name]', value="<%= @pet.name %>"/><br>
+  <label>Image Url:</label><input type='text' name ='pet[image]', value="<%= @pet.image%>"><br>
+  <label>Age:</label><input type='text' name ='pet[age]', value="<%= @pet.age%>"/><br>
+  <label>Sex:</label><select id='sex' name ='pet[sex]', value="<%= @pet.sex%>">
+    <option value ="male">Male</option>
+    <option value ="female">Female</option></select><br><br>
+    <label>Description:</label><textarea name ='pet[description]'><%= @pet.description%></textarea>><br>
+  <label></label><input type='submit' value="Submit"/>
+</form>
