@@ -22,7 +22,8 @@ ActiveRecord::Schema.define(version: 2020_10_10_220242) do
     t.integer "age"
     t.string "sex"
     t.string "status", default: "Available"
-    t.integer "shelter_id"
+    t.bigint "shelter_id"
+    t.index ["shelter_id"], name: "index_pets_on_shelter_id"
   end
 
   create_table "shelters", force: :cascade do |t|
@@ -33,5 +34,5 @@ ActiveRecord::Schema.define(version: 2020_10_10_220242) do
     t.integer "zip"
   end
 
-  add_foreign_key "pets", "shelters", name: "pets_shelter_id_fkey", on_update: :cascade, on_delete: :cascade
+  add_foreign_key "pets", "shelters"
 end
