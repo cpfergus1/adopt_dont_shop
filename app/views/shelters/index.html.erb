@@ -7,10 +7,10 @@
 
 <p><a href="/">Home</a>
   <a href="/pets">Pets</a>
-  <a href="/shelters">Shelters</a><br>
-<a href="/shelters/new">New Shelter</a></p>
-<br><br>
+  <a href="/shelters">Shelters</a></p>
+<br>
 <h2>Shelters</h2>
+<a href="/shelters/new">New Shelter</a>
 
 <p><% @shelters.each do |shelter| %>
   <a href="/shelters/<%= shelter.id %>"><%= shelter.name %></a><br>
