@@ -5,12 +5,16 @@
   <%= javascript_include_tag 'application' %>
 </head>
 
-<a href="/shelters">Back</a>
+<p><a href="/">Home</a>
+  <a href="/pets">Pets</a>
+  <a href="/shelters">Shelters</a><br>
+<a href="/shelters">Back</a></p>
 
 
 <h2><%= @shelter.name %></h2>
 <p style="padding: 0px" >Shelter ID:  <%= @shelter.id%><br>
-<a href="/shelters/<%=@shelter.id%>" data-method="delete">Delete Shelter</a></p>
+<a href="/shelters/<%=@shelter.id%>" data-method="delete">Delete Shelter</a>
+<a href="/shelters/<%=@shelter.id%>/pets">Shelter's Pets</a></p>
 <br><br>
 <h4>Shelter Location</h4>
 <table>

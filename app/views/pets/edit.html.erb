@@ -5,6 +5,10 @@
   <%= javascript_include_tag 'application' %>
 </head>
 
+<p><a href="/">Home</a>
+  <a href="/pets">Pets</a>
+  <a href="/shelters">Shelters</a><br>
+
 <a href="/pets/<%= @pet.id %>">Back</a>
 <a href="/pets/<%=@pet.id%>" data-method="delete">Delete Pet</a></p>
 

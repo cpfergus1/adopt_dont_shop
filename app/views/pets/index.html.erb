@@ -5,8 +5,9 @@
   <%= javascript_include_tag 'application' %>
 </head>
 
-<p><a href="/">Home</a><br>
-
+<p><a href="/">Home</a>
+  <a href="/pets">Pets</a>
+  <a href="/shelters">Shelters</a></p><br>
 <h2>Pets</h2>
 
 <% @pets.each do |pet| %>
@@ -15,6 +16,8 @@
     <%= "Description: #{pet.description}" %><br>
     <%= "Age:         #{pet.age}" %><br>
     <%= "Sex:         #{pet.sex}" %><br>
-    "Shelter: <a href="/shelters/<%= pet.shelter.id %>"><%= pet.shelter.name %></a> <br></p>
+    Shelter: <a href="/shelters/<%= pet.shelter.id %>"><%= pet.shelter.name %></a><br>
+    <a href="/pets/<%= pet.id %>/edit" id="<%= pet.id %>_edit">Edit Info</a>
+    <a href="/pets/<%=pet.id%>" data-method="delete">Delete Pet</a> <br></p>
     <br><br>
     <% end %>

@@ -10,17 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_10_220242) do
+ActiveRecord::Schema.define(version: 2020_10_10_234925) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "pets", force: :cascade do |t|
-    t.string "image"
-    t.string "name"
-    t.string "description"
-    t.integer "age"
-    t.string "sex"
+    t.string "image", default: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Comic_image_missing.svg/1200px-Comic_image_missing.svg.png"
+    t.string "name", default: "Not Provided"
+    t.string "description", default: "Not Provided"
+    t.integer "age", default: 0
+    t.string "sex", default: "Not Provided"
     t.string "status", default: "Available"
     t.bigint "shelter_id"
     t.index ["shelter_id"], name: "index_pets_on_shelter_id"
