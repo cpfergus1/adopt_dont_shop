@@ -14,7 +14,7 @@
       <img src="./assets/0.12.3/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" class="hide">
-      <div class="timestamp">Generated <abbr class="timeago" title="2020-10-10T22:28:24-03:00">2020-10-10T22:28:24-03:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2020-10-10T22:29:55-03:00">2020-10-10T22:29:55-03:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -30,7 +30,7 @@
      covered at
      <span class="covered_strength">
        <span class="green">
-         1.28
+         1.29
        </span>
     </span> hits/line
     )
@@ -43,8 +43,8 @@
   </div>
 
   <div class="t-line-summary">
-    <b>422</b> relevant lines,
-    <span class="green"><b>422</b> lines covered</span> and
+    <b>434</b> relevant lines,
+    <span class="green"><b>434</b> lines covered</span> and
     <span class="red"><b>0</b> lines missed. </span>
     (<span class="green">
   100.0%
@@ -88,7 +88,7 @@
             <td class="cell--number">22</td>
             <td class="cell--number">22</td>
             <td class="cell--number">0</td>
-            <td class="cell--number">2.55</td>
+            <td class="cell--number">2.59</td>
             
           </tr>
         
@@ -99,7 +99,7 @@
             <td class="cell--number">23</td>
             <td class="cell--number">23</td>
             <td class="cell--number">0</td>
-            <td class="cell--number">2.61</td>
+            <td class="cell--number">2.74</td>
             
           </tr>
         
@@ -392,11 +392,11 @@
           <tr class="t-file">
             <td class="strong t-file__name"><a href="#7a840cd23049c6eaf61f19640bc426591efbcee1" class="src_link" title="spec/features/shelter/update_spec.rb">spec/features/shelter/update_spec.rb</a></td>
             <td class="green strong cell--number t-file__coverage">100.00 %</td>
-            <td class="cell--number">53</td>
-            <td class="cell--number">35</td>
-            <td class="cell--number">35</td>
+            <td class="cell--number">69</td>
+            <td class="cell--number">47</td>
+            <td class="cell--number">47</td>
             <td class="cell--number">0</td>
-            <td class="cell--number">1.06</td>
+            <td class="cell--number">1.09</td>
             
           </tr>
         
@@ -519,8 +519,8 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="15" data-linenumber="3">
-            <span class="hits">15</span>
+          <li class="covered" data-hits="16" data-linenumber="3">
+            <span class="hits">16</span>
             
 
             
@@ -1100,8 +1100,8 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="17" data-linenumber="3">
-            <span class="hits">17</span>
+          <li class="covered" data-hits="18" data-linenumber="3">
+            <span class="hits">18</span>
             
 
             
@@ -1353,8 +1353,8 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="3" data-linenumber="26">
-            <span class="hits">3</span>
+          <li class="covered" data-hits="5" data-linenumber="26">
+            <span class="hits">5</span>
             
 
             
@@ -9756,8 +9756,8 @@
     
 
     <div class="t-line-summary">
-      <b>35</b> relevant lines.
-      <span class="green"><b>35</b> lines covered</span> and
+      <b>47</b> relevant lines.
+      <span class="green"><b>47</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
 
@@ -9824,8 +9824,8 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="3" data-linenumber="6">
-            <span class="hits">3</span>
+          <li class="covered" data-hits="5" data-linenumber="6">
+            <span class="hits">5</span>
             
 
             
@@ -10341,7 +10341,183 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="53">
+          <li class="covered" data-hits="1" data-linenumber="53">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    describe &#39;When I click on the name a shelter anywhere on the site&#39; do</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="54">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">      it &quot;Then that link takes me to that Shelter&#39;s show page&quot; do</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="55">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">       visit &quot;/shelters/#{@shelter.id}/edit&quot;</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="56">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">       expect(page).to have_link(&#39;All Pets&#39;)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="57">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">       click_link(&#39;All Pets&#39;)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="58">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">        expect(current_path).to eq(&#39;/pets&#39;)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="59">
+            
+            
+
+            
+
+            <code class="ruby">      end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="60">
+            
+            
+
+            
+
+            <code class="ruby">    end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="61">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    describe &#39;When I click on the name a shelter anywhere on the site&#39; do</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="62">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">      it &quot;Then that link takes me to that Shelter&#39;s show page&quot; do</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="63">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">        visit &quot;/shelters/#{@shelter.id}/edit&quot;</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="64">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">        expect(page).to have_link(&#39;Shelters&#39;)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="65">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">        click_link(&#39;Shelters&#39;)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="66">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">        expect(current_path).to eq(&#39;/shelters&#39;)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="67">
+            
+            
+
+            
+
+            <code class="ruby">      end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="68">
+            
+            
+
+            
+
+            <code class="ruby">    end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="69">
             
             
 
