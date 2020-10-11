@@ -6,16 +6,9 @@
 </head>
 
 <body>
-<img src=<%="#{@pet.image}"%> alt=<%= "#{@pet.name}" %> height=200 width=200><br>
-<h2><%= @pet.name %></h2>
-<!-- <p style="padding: 0px" >Pet ID:  <%= @pet.id%><br> -->
-<a href="/pets/<%=@pet.id%>" data-method="delete">Delete Pet</a></p>
-<br><br>
-<table>
-  <tr>
-    <td>Desciption: </td>
-    <td><%= @pet.description %></td>
-  </tr>
+<img src=<%="#{@pet.image}"%> alt=<%= "#{@pet.name}" %> height=300 width=300 class="Center"><br>
+<h2 align="center"><%= @pet.name %></h2>
+<table class= "Show">
   <tr>
     <td>Approximate Age:</td>
     <td><%= @pet.age %></td>
@@ -28,7 +21,11 @@
     <td>Adoptable Status:</td>
     <td><%= @pet.status %></td>
   </tr>
+  <tr>
+    <td>Desciption: </td>
+    <td><%= @pet.description %></td>
+  </tr>
+  <tr><td><a href="/pets/<%= @pet.id %>/edit">Update Pet</a></td>
+  <td><a href="/pets/<%=@pet.id%>" data-method="delete">Delete Pet</a></td></tr>
 </table>
-<br>
-<a href="/pets/<%= @pet.id %>/edit">Update Pet</a>
 </body>

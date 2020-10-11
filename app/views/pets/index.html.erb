@@ -5,17 +5,29 @@
   <%= javascript_include_tag 'application' %>
 </head>
 <body>
-<h2>Pets</h2>
+<h2 align="center">Pets</h2>
 
+<table class= "Results" align="center" border ="0">
+  <tr align="center">
+    <td class = "TableTitle">Picture</td>
+    <td class = "TableTitle">Name</td>
+    <td class = "TableTitle">Age</td>
+    <td class = "TableTitle">Gender</td>
+    <td class = "TableTitle">Shelter</td>
+    <td class = "TableTitle">Description</td>
+    <td class = "TableTitle">Options</td>
+  </tr>
 <% @pets.each do |pet| %>
-    <img src=<%="#{pet.image}"%> alt=<%= "#{pet.name}" %> height=100 width=100><br>
-  <p><a href="/pets/<%= pet.id %>"><%= pet.name %></a><br>
-    <%= "Description: #{pet.description}" %><br>
-    <%= "Age:         #{pet.age}" %><br>
-    <%= "Sex:         #{pet.sex}" %><br>
-    Shelter: <a href="/shelters/<%= pet.shelter.id %>"><%= pet.shelter.name %></a><br>
-    <a href="/pets/<%= pet.id %>/edit" id="<%= pet.id %>_edit">Edit Info</a>
-    <a href="/pets/<%=pet.id%>" data-method="delete">Delete Pet</a> <br></p>
-    <br><br>
+  <tr align="center">
+    <td class="TableContent"><img src=<%="#{pet.image}"%> alt=<%= "#{pet.name}" %> height=200 width=200></td>
+    <td class="TableContent"><a href="/pets/<%= pet.id %>"><%= pet.name %></a></td>
+    <td class="TableContent"><%= "#{pet.age}" %></td>
+    <td class="TableContent"><%= "#{pet.sex}" %></td>
+    <td class="TableContent"><a href="/shelters/<%= pet.shelter.id %>"><%= pet.shelter.name %></a></td>
+    <td class="TableContent"><%= "#{pet.description}" %></td>
+    <td class="TableContent"><a href="/pets/<%= pet.id %>/edit" id="<%= pet.id %>_edit">Edit Info</a><br>
+      <a href="/pets/<%=pet.id%>" data-method="delete">Delete Pet</a></td>
+  </tr>
     <% end %>
+</table>
 </body>

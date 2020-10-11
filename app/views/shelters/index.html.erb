@@ -7,11 +7,20 @@
 
 <body>
 <h2>Shelters</h2>
-<a href="/shelters/new">New Shelter</a>
 
-<p><% @shelters.each do |shelter| %>
-  <a href="/shelters/<%= shelter.id %>"><%= shelter.name %></a><br>
-  <a href="/shelters/<%= shelter.id %>/edit" id="<%= shelter.id %>_edit">Edit Info</a>
-  <a href="/shelters/<%=shelter.id%>" data-method="delete" id="<%= shelter.id %>_delete">Delete Shelter</a><br><br>
-    <% end %></p>
+<table class ="Show">
+  <tr>
+    <td class ="TableTitle">Name</td>
+    <td class ="TableTitle">Options</td>
+  </tr>
+<% @shelters.each do |shelter| %>
+  <tr>
+  <td class="TableContent"><a href="/shelters/<%= shelter.id %>"><%= shelter.name %></a></td>
+  <td class="TableContent"><a href="/shelters/<%= shelter.id %>/pets" id="<%= shelter.id %>_pets">Pets</a><br>
+    <a href="/shelters/<%= shelter.id %>/edit" id="<%= shelter.id %>_edit">Edit Info</a><br>
+    <a href="/shelters/<%=shelter.id%>" data-method="delete" id="<%= shelter.id %>_delete">Delete Shelter</a></td>
+  </tr>
+    <% end %>
+  </table>
+  <div align="center"><a href="/shelters/new">New Shelter</a></div>
 </body>

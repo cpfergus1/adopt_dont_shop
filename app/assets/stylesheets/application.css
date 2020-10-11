@@ -14,34 +14,93 @@
  *= require_self
  */
 
- nav {
-   min-height: 38px;
-   background-color: rgb(80,80,80);
+ .Center {
+   display: block;
+   margin-left: auto;
+   margin-right: auto;
+   width: 300px;
  }
 
-nav a.brand { font-size: 18px; }
-nav a.brand:hover {
- color: #fff;
- background-color: transparent;
- text-decoration: none;
-}
-body {
-  background-color: rgb(126,54,123);
-}
+ header ul {
+   list-style-type: none;
+   padding: 0;
+   overflow: hidden;
+   background-color: #333333;
+ }
 
-label{
-display: inline-block;
-float: left;
-clear: left;
-width: 75px;
-text-align: left; /*Change to right here if you want it close to the inputs*/
-}
+ header ul li { float:left}
+ li a.navbar {
+   display: block;
+   color: white;
+   text-align: center;
+   padding: 16px;
+   text-decoration: none;
 
-input {
-display: inline-block;
-float: left;
-}
+ }
+ header li a:hover {
+   background-color: #111111;
+ }
+ body {
+   background-color: rgb(255,255,255);
+ }
 
-header {
-  background-color: #fff
-}
+ label{
+   display: inline-block;
+   float: left;
+   clear: left;
+   width: 75px;
+   text-align: left; /*Change to right here if you want it close to the inputs*/
+ }
+
+ input {
+   display: inline-block;
+   float: left;
+ }
+ h2 {
+   font-weight: bold;
+   color: #58595b;
+   line-height: 1.1;
+ }
+ table.Results {
+   border-collapse: collapse;
+   margin-left: auto;
+   margin-right: auto;
+   width: 90%;
+ }
+ table.Show{
+   border-collapse: collapse;
+   margin-left: auto;
+   margin-right: auto;
+   width: 50%;
+ }
+ table.Show tr td {
+   word-wrap: break-word;
+   text-align: center;
+   font-family: verdana;
+   font-size: 10pt;
+   font-style: normal;
+   line-height: normal;
+   font-weight: normal;
+   font-variant: normal;
+   border: 1px solid #ddd;
+   padding: 8px;
+ }
+ table tr td.TableTitle {
+   background-color: #CCCCCC;
+   color: #000000;
+   font-weight: bold;
+   border-width: 1px;
+   border-style: none;
+   text-align: center;
+ }
+ table tr td.TableContent {
+   word-wrap: break-word;
+   font-family: verdana;
+   font-size: 10pt;
+   font-style: normal;
+   line-height: normal;
+   font-weight: normal;
+   font-variant: normal;
+   border: 1px solid #ddd;
+   padding: 8px;
+ }
