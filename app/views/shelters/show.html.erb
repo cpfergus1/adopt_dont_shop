@@ -6,13 +6,10 @@
 </head>
 
 <body>
-<h2><%= @shelter.name %></h2>
-<p style="padding: 0px" >Shelter ID:  <%= @shelter.id%><br>
-<a href="/shelters/<%=@shelter.id%>" data-method="delete">Delete Shelter</a>
-<a href="/shelters/<%=@shelter.id%>/pets">Shelter's Pets</a></p>
-<br><br>
-<h4>Shelter Location</h4>
-<table>
+<h2 align="center"><%= @shelter.name %></h2>
+<p style="padding: 0px" align="center">Shelter ID:  <%= @shelter.id%><br>
+<h4 align="center">Shelter Location:</h4>
+<table class ='Show'>
   <tr>
     <td>Address:</td>
     <td><%= @shelter.address %></td>
@@ -29,8 +26,14 @@
     <td>Zip:</td>
     <td><%= @shelter.zip %></td>
   </tr>
+  <tr>
+    <td>Options:</td>
+      <td>
+        <a href="/shelters/<%=@shelter.id%>/pets">Shelter's Pets</a><br>
+        <a href="/shelters/<%= @shelter.id %>/edit">Update Shelter</a><br>
+        <a href="/shelters/<%=@shelter.id%>" data-method="delete">Delete Shelter</a>
+      </td>
+    </tr>
 </table>
 <br>
-<a href="/shelters/<%= @shelter.id %>/edit">Update Shelter</a>
-<a href="/shelters/<%= @shelter.id %>/pets">Pets</a>
 </body>
