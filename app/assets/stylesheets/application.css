@@ -13,3 +13,35 @@
  *= require_tree .
  *= require_self
  */
+
+ nav {
+   min-height: 38px;
+   background-color: rgb(80,80,80);
+ }
+
+nav a.brand { font-size: 18px; }
+nav a.brand:hover {
+ color: #fff;
+ background-color: transparent;
+ text-decoration: none;
+}
+body {
+  background-color: rgb(126,54,123);
+}
+
+label{
+display: inline-block;
+float: left;
+clear: left;
+width: 75px;
+text-align: left; /*Change to right here if you want it close to the inputs*/
+}
+
+input {
+display: inline-block;
+float: left;
+}
+
+header {
+  background-color: #fff
+}

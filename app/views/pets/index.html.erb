@@ -4,10 +4,7 @@
   <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= javascript_include_tag 'application' %>
 </head>
-
-<p><a href="/">Home</a>
-  <a href="/pets">All Pets</a>
-  <a href="/shelters">Shelters</a></p><br>
+<body>
 <h2>Pets</h2>
 
 <% @pets.each do |pet| %>
@@ -21,3 +18,4 @@
     <a href="/pets/<%=pet.id%>" data-method="delete">Delete Pet</a> <br></p>
     <br><br>
     <% end %>
+</body>

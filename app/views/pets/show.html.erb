@@ -4,11 +4,8 @@
   <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= javascript_include_tag 'application' %>
 </head>
-<p><a href="/">Home</a>
-  <a href="/pets">All Pets</a>
-  <a href="/shelters">Shelters</a><br>
-<a href="/pets">Back</a><br><br></p>
 
+<body>
 <img src=<%="#{@pet.image}"%> alt=<%= "#{@pet.name}" %> height=200 width=200><br>
 <h2><%= @pet.name %></h2>
 <!-- <p style="padding: 0px" >Pet ID:  <%= @pet.id%><br> -->
@@ -34,3 +31,4 @@
 </table>
 <br>
 <a href="/pets/<%= @pet.id %>/edit">Update Pet</a>
+</body>

@@ -10,6 +10,15 @@
   </head>
 
   <body>
+    <header>
+      <nav>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/pets">All Pets</a></li>
+          <li><a href="/shelters">Shelters</a></li>
+          <li><a href= <%=request.referer%> >Back</a></li></ul>
+        </nav>
+    </header>
     <%= yield %>
   </body>
 </html>
