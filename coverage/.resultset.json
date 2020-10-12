@@ -288,8 +288,23 @@
           1,
           null
         ]
+      },
+      "/Users/cpfergus1/turing/module2/adopt_dont_shop/app/controllers/users_controller.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/cpfergus1/turing/module2/adopt_dont_shop/app/controllers/application_controller.rb": {
+        "lines": [
+          1,
+          null
+        ]
       }
     },
-    "timestamp": 1602542048
+    "timestamp": 1602542663
   }
 }

@@ -1,0 +1,30 @@
+<head>
+  <%= csrf_meta_tags %>
+
+  <%= stylesheet_link_tag    'application', media: 'all' %>
+  <%= javascript_include_tag 'application' %>
+</head>
+
+<body>
+<h2 align="center"><%= @user.name %></h2>
+<p style="padding: 0px" align="center">User ID:  <%= @user.id%><br>
+<table class ='Show'>
+  <tr>
+    <td>Address:</td>
+    <td><%= @user.address %></td>
+  </tr>
+  <tr>
+    <td>City:</td>
+    <td><%= @user.city %></td>
+  </tr>
+  <tr>
+    <td>State:</td>
+    <td><%= @user.state %></td>
+  </tr>
+  <tr>
+    <td>Zip:</td>
+    <td><%= @user.zip %></td>
+  </tr>
+</table>
+<br>
+</body>

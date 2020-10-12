@@ -4,7 +4,7 @@ require 'rails_helper'
 
 describe 'As a visitor' do
   before(:each) do
-    @user = User.create(name: "name",
+    @user = User.create!(name: "name",
                         address: "address",
                         city: "city",
                         state: "state",
@@ -15,7 +15,7 @@ describe 'As a visitor' do
       #Including the User's
       visit "/users/#{@user.id}"
       expect(page).to have_content(@user.name)
-      expect(page).to have_content(@user.street)
+      expect(page).to have_content(@user.address)
       expect(page).to have_content(@user.city)
       expect(page).to have_content(@user.state)
       expect(page).to have_content(@user.zip)
