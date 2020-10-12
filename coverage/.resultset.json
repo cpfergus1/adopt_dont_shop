@@ -274,16 +274,8 @@
           null
         ]
       },
-      "/Users/cpfergus1/turing/module2/adopt_dont_shop/app/models/pet.rb": {
+      "/Users/cpfergus1/turing/module2/adopt_dont_shop/app/models/user.rb": {
         "lines": [
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
           1,
           null
         ]
@@ -294,37 +286,8 @@
           1,
           null
         ]
-      },
-      "/Users/cpfergus1/turing/module2/adopt_dont_shop/spec/models/shelters_spec.rb": {
-        "lines": [
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          null,
-          null,
-          null
-        ]
-      },
-      "/Users/cpfergus1/turing/module2/adopt_dont_shop/app/models/shelter.rb": {
-        "lines": [
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          null
-        ]
       }
     },
-    "timestamp": 1602518072
+    "timestamp": 1602541668
   }
 }
