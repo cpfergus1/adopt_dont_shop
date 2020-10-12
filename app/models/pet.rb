@@ -7,4 +7,6 @@ class Pet < ApplicationRecord
   validates_presence_of :description
   validates_presence_of :shelter_id
   validates_presence_of :status
+
+
 end
