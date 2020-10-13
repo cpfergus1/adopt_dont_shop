@@ -1,3 +1,10 @@
+# This file should contain all the record creation needed to seed the database with its default values.
+# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
+#
+# Examples:
+#
+#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
+#   Character.create(name: 'Luke', movie: movies.first)
 Shelter.create!([
   {id: 1, name: "Windsor Animal Shelter", address: "3321 Windsor Lane", city: "Windsor", state: "Colorado", zip: 80550},
   {id: 2, name: "Denver Animal Shelter", address: "3321 Denver Lane", city: "Denver", state: "Colorado", zip: 80234}
@@ -44,6 +51,7 @@ broomfield.pets.create(image: "https://images.dog.ceo/breeds/appenzeller/n021079
            sex: "F",
            shelter_id: broomfield.id,
            status: 'Adoption Pending')
+<<<<<<< HEAD
 
 Pet.create!([
   {image: "https://i.guim.co.uk/img/media/20098ae982d6b3ba4d70ede3ef9b8f79ab1205ce/0_0_969_1005/master/969.jpg?width=700&quality=85&auto=format&fit=max&s=470657ebd2a0e704df88997d393aea15", name: "Roxanne Everfluff", description: "afdfads", age: 1, sex: "male", status: "Available", shelter_id: 1},
@@ -69,3 +77,5 @@ User.create!([
   {name: "Jefferey Bob", address: "11134 Jeffreybob Lane", city: "Denver", state: "Colorado", zip: 80525},
   {name: "Jordan Bob", address: "11134 Jordanbob Lane", city: "Windsor", state: "Colorado", zip: 80524}
 ])
+=======
+>>>>>>> 4e700c9c823e20a52b8b8c694febb17eeda48299
