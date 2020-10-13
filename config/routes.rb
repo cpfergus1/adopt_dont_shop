@@ -21,4 +21,5 @@ Rails.application.routes.draw do
   post '/users', to: 'users#create'
   get '/users/:id', to: 'users#show'
 
+  get '/shelters/:id/reviews/new', to: 'reviews#new'
 end
