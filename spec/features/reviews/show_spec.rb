@@ -8,7 +8,7 @@ describe "As a visitor," do
                               city: 'city',
                               state: 'state',
                               zip: '8')
-    @user = User.create!(name: "User1",
+    @user = User.create!(name: "Joseph",
                          address: "address",
                          city: "city",
                          state: "state",
@@ -16,7 +16,7 @@ describe "As a visitor," do
     @review = Review.create!(title: "this review",
                                    rating: 3.5,
                                    content: "This review needs work",
-                                   user_name: "Joseph",
+                                   user_name: @user.name,
                                    shelter_id: @shelter.id,
                                    user_id: @user.id)
   end
@@ -27,7 +27,7 @@ describe "As a visitor," do
       expect(page).to have_content(@review.title)
       expect(page).to have_content(@review.rating)
       expect(page).to have_content(@review.content)
-      expect(page).to have_content(@review.pic)
+      expect(page).to have_xpath("//img[contains(@src, '#{@review.pic}')]")
       expect(page).to have_content(@review.user_name)
     end
   end
