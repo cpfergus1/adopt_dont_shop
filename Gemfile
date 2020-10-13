@@ -44,6 +44,7 @@ group :development, :test do
   gem 'shoulda-matchers', '>= 4.0'
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'rspec_pacman_formatter'
+  gem 'seed_dump'
 end
 
 group :development do
