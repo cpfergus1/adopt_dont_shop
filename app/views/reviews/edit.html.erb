@@ -1,0 +1,28 @@
+<head>
+  <%= csrf_meta_tags %>
+
+  <%= stylesheet_link_tag    'application', media: 'all' %>
+  <%= javascript_include_tag 'application' %>
+</head>
+
+<body>
+<form action="/reviews/<%= @review.id %>" method="post">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  <input type="hidden" name="review[shelter_id]" value="<%= @shelter.id %>">
+  <input type="hidden" name="_method" value="PATCH">
+
+  <p>Edit Review:</p>
+  <label>Title:</label><input type='text' name='review[title]', value = "<%= @review.title %>"/><br>
+  <label>Rating:</label><select id='rating' name ='review[rating]', value = "<%= @review.rating %>">
+    <option value =1>1</option>
+    <option value =2>2</option>
+    <option value =3>3</option>
+    <option value =4>4</option>
+    <option value =5>5</option></select><br><br>
+
+  <label>Content:</label><input type='text' name ='review[content]', value = "<%= @review.content %>"><br>
+  <label>User Name:</label><input type='text' name ='review[user_name]', value = "<%= @review.user_name %>"/><br>
+  <label>Image:</label><input type='text' name ='review[pic]', value = "<%= @review.pic %>"/><br>
+  <label></label><input type='submit' value="Edit Review"/>
+</form>
+</body>

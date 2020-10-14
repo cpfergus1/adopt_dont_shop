@@ -47,6 +47,8 @@
           <%= review.user.name %></td>
       <td> <p><%= review.title %> : <%=review.rating %>-stars</p>
            <p><%= review.content %></p>
+           <br>
+           <%= link_to 'Edit Review', "/reviews/#{review.id}/edit" %>
       </td>
   </tr>
   <% end %>

@@ -11,6 +11,18 @@ class ReviewsController < ApplicationController
     redirect_to "/shelters/#{@shelter.id}"
   end
 
+  def edit
+    @review = Review.find(params[:id])
+    @shelter = @review.shelter
+  end
+
+  def update
+    @user = User.find_by(name: params[:review][:user_name])
+    @review = Review.find(params[:id])
+    @review.update(review_params)
+    redirect_to "/shelters/#{params[:review][:shelter_id]}"
+  end
+
   private
   def review_params
     # {
@@ -23,5 +35,6 @@ class ReviewsController < ApplicationController
     # }
     params.require(:review).permit(:title, :rating, :shelter_id, :content, :user_name, :user_)
   end
+
 
 end
