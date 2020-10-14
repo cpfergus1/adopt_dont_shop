@@ -40,7 +40,7 @@
 
 <%= link_to 'New Review', "/shelters/#{@shelter.id}/reviews/new" %>
 
-<table class="Show">
+<table class="Show" id='reviews'>
   <% @reviews.each do |review| %>
   <tr>
       <td class="TableContent"><img src=<%=review.pic %> alt=<%= "#{review.user.name}" %> height=75 width=75><br>
@@ -49,6 +49,7 @@
            <p><%= review.content %></p>
            <br>
            <%= link_to 'Edit Review', "/reviews/#{review.id}/edit" %>
+           <a href="/reviews/<%=review.id%>" data-method="delete">Delete Review</a>
       </td>
   </tr>
   <% end %>
