@@ -38,6 +38,8 @@
 <br>
 <br>
 
+<%= link_to 'New Review', "/shelters/#{@shelter.id}/reviews/new" %>
+
 <table class="Show">
   <% @reviews.each do |review| %>
   <tr>
@@ -49,7 +51,6 @@
   </tr>
   <% end %>
   </table>
-
 
 
 <br>

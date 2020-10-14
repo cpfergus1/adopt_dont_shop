@@ -1,4 +1,27 @@
 class ReviewsController < ApplicationController
   def new
-  end 
+    @shelter = Shelter.find(params[:id])
+  end
+
+  def create
+    @shelter = Shelter.find(params[:id])
+    @user = User.find_by(name: params[:review][:user_name])
+    # review = @user.reviews.create(review_params)
+    @review = @user.reviews.create(review_params.merge(pic: params[:review][:pic]))
+    redirect_to "/shelters/#{@shelter.id}"
+  end
+
+  private
+  def review_params
+    # {
+    #   title: params[:review][:title],
+    #   rating: params[:review][:rating],
+    #   pic: params[:review][:pic],
+    #   content: params[:review][:content],
+    #   user_name: params[:review][:user_name],
+    #   shelter_id: params[:review][:shelter_id]
+    # }
+    params.require(:review).permit(:title, :rating, :shelter_id, :content, :user_name, :user_)
+  end
+
 end
