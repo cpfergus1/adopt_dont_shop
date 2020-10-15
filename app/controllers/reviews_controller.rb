@@ -6,15 +6,9 @@ class ReviewsController < ApplicationController
   def create
     @shelter = Shelter.find(params[:id])
     @user = User.find_by(name: params[:review][:user_name])
-    require "pry"; binding.pry
     # review = @user.reviews.create(review_params)
-    @review = Review.new(review_params.merge(pic: params[:review][:pic], user_id: @user.id))
-    if @review.save
-      redirect_to "/shelters/#{@shelter.id}"
-    else
-      flash[:notice] = "Review Not Created: Fields can not be empty."
-      render :new
-    end
+    @review = @user.reviews.create(review_params.merge(pic: params[:review][:pic]))
+    redirect_to "/shelters/#{@shelter.id}"
   end
 
   def edit
@@ -45,7 +39,7 @@ class ReviewsController < ApplicationController
     #   user_name: params[:review][:user_name],
     #   shelter_id: params[:review][:shelter_id]
     # }
-    params.require(:review).permit(:title, :rating, :shelter_id, :content, :user_name)
+    params.require(:review).permit(:title, :rating, :shelter_id, :content, :user_name, :user_)
   end
 
 

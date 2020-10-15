@@ -7,17 +7,4 @@ class Review < ApplicationRecord
   belongs_to :shelter
   belongs_to :user
 
-  attr_writer :title, :rating, :shelter_id, :content, :user_name, :user_id, :pic,
-
-  def initialize(options = {})
-    require "pry"; binding.pry
-    self.title = options[:title]
-    self.rating = options[:rating]
-    self.content = options[:content]
-    self.user_name = options[:user_name]
-    self.shelter_id = options[:shelter_id]
-    self.user_id = options[:user_id]
-    self.pic = options.fetch(:pic, "https://www.computerhope.com/jargon/g/guest-user.jpg")
-  end
-
 end
