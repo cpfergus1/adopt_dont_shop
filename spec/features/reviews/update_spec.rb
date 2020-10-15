@@ -9,7 +9,7 @@ describe "As a visitor," do
       state: "state",
       zip: 5)
 
-    @user = User.create!(name: "name",
+    @user = User.create!(name: "Bob",
       address: "address",
       city: "city",
       state: "state",
@@ -19,7 +19,7 @@ describe "As a visitor," do
         rating: "1",
         content: "Testy test",
         shelter_id: @shelter.id,
-        user_name: "name",
+        user_name: "Bob",
         pic: "image"
       )
     end
@@ -46,21 +46,20 @@ describe "As a visitor," do
   describe 'When I fill out the form with updated information' do
     before do
       visit "/reviews/#{@review.id}/edit"
-      fill_in 'review[title]', with: "test"
+      fill_in 'review[title]', with: "title"
       select '3', from: "review[rating]"
-      fill_in 'review[content]', with: "test"
-      fill_in 'review[pic]', with: "test"
-      fill_in 'review[user_name]', with: "test"
+      fill_in 'review[content]', with: "content"
+      fill_in 'review[pic]', with: "pic"
+      fill_in 'review[user_name]', with: "Bob"
     end
 
     describe 'I click the button to submit the form' do
       it "Then a `PATCH` request is sent to '/shelters/:id/reviews'," do
         click_button 'Edit Review'
         expect(current_path).to eq("/shelters/#{@shelter.id}")
-        expect(page).to have_content("test")
-        expect(page).to have_content("test")
-        expect(page).to have_content("test")
-        expect(page).to have_content("test")
+        expect(page).to have_content("title")
+        expect(page).to have_content("content")
+        expect(page).to have_content("Bob")
         expect(page).to have_content("3")
       end
     end
@@ -70,10 +69,15 @@ describe "As a visitor," do
     describe "And I fail to enter a title, a rating, and/or content in the new shelter review form, but still try to submit the form" do
       describe "I see a flash message indicating that I need to fill in a title, rating, and content in order to submit a shelter review" do
         it "And I'm returned to the update form to update" do
-          visit "/shelters/#{@shelter.id}/reviews/new"
-          click_on 'Submit Review'
+          visit "/reviews/#{@review.id}/edit"
+          fill_in 'review[title]', with: ""
+          select '3', from: "review[rating]"
+          fill_in 'review[content]', with: ""
+          fill_in 'review[pic]', with: ""
+          fill_in 'review[user_name]', with: "Joey McJoeyboberson"
+          click_button 'Edit Review'
           expect(page).to have_content("User name was not entered or does not exist.")
-          expect(page).to have_button("Submit Review")
+          expect(page).to have_button("Edit Review")
         end
       end
     end
@@ -82,11 +86,15 @@ describe "As a visitor," do
   describe "And I fail to enter a title, a rating, and/or content in the new shelter review form, but still try to submit the form" do
     describe "I see a flash message indicating that I need to fill in a title, rating, and content in order to submit a shelter review" do
       it "And I'm returned to the update form to update" do
-        visit "/shelters/#{@shelter.id}/reviews/new"
+        visit "/reviews/#{@review.id}/edit"
+        fill_in 'review[title]', with: ""
+        select '3', from: "review[rating]"
+        fill_in 'review[content]', with: ""
+        fill_in 'review[pic]', with: ""
         fill_in 'review[user_name]', with: "Bob"
-        click_on 'Submit Review'
-        expect(page).to have_content("Review Not Created: Fields can not be empty.")
-        expect(page).to have_button("Submit Review")
+        click_button 'Edit Review'
+        expect(page).to have_content("Review Not Updated: Fields can not be empty.")
+        expect(page).to have_button("Edit Review")
       end
     end
   end

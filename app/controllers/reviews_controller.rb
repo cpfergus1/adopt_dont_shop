@@ -5,21 +5,12 @@ class ReviewsController < ApplicationController
 
   def create
     @shelter = Shelter.find(params[:id])
-    if params[:review][:user_name] == ""
+    if User.where(name: params[:review][:user_name]) == []
       flash[:notice] = "User name was not entered or does not exist."
       render :new
     else
       @user = User.find_by!(name: params[:review][:user_name])
       review = @user.reviews.new(review_params)
-    # @review = Review.new({
-    #     title: params[:review][:title],
-    #     rating: params[:review][:rating],
-    #     pic: params[:review][:pic],
-    #     content: params[:review][:content],
-    #     user_name: params[:review][:user_name],
-    #     shelter_id: params[:review][:shelter_id],
-    #     user_id: 1
-    #   })
       if review.save
         redirect_to "/shelters/#{@shelter.id}"
       else
@@ -35,10 +26,21 @@ class ReviewsController < ApplicationController
   end
 
   def update
-    @user = User.find_by(name: params[:review][:user_name])
     @review = Review.find(params[:id])
-    @review.update(review_params)
-    redirect_to "/shelters/#{params[:review][:shelter_id]}"
+    @shelter = @review.shelter
+    if User.where(name: params[:review][:user_name]) == []
+      flash[:notice] = "User name was not entered or does not exist."
+      render :edit
+    else
+      @user = User.find_by(name: params[:review][:user_name])
+      @review.update(review_params)
+      if @review.save
+        redirect_to "/shelters/#{params[:review][:shelter_id]}"
+      else
+        flash[:notice] = "Review Not Updated: Fields can not be empty."
+        render :edit
+      end
+    end
   end
 
   def destroy
