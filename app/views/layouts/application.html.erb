@@ -19,6 +19,9 @@
           <li><a href= <%=request.referer%>, class ="navbar">Back</a></li></ul>
         </nav>
     </header>
+    <% flash.each do |type, message| %>
+      <p><%= message %></p>
+    <% end %>
     <%= yield %>
   </body>
 </html>

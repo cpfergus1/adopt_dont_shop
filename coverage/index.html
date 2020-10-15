@@ -14,7 +14,7 @@
       <img src="./assets/0.12.3/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" class="hide">
-      <div class="timestamp">Generated <abbr class="timeago" title="2020-10-14T10:51:47-03:00">2020-10-14T10:51:47-03:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2020-10-14T21:58:34-03:00">2020-10-14T21:58:34-03:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -23,7 +23,7 @@
     <span class="group_name">All Files</span>
     (<span class="covered_percent">
       <span class="green">
-  99.72%
+  99.45%
 </span>
 
      </span>
@@ -43,11 +43,11 @@
   </div>
 
   <div class="t-line-summary">
-    <b>711</b> relevant lines,
-    <span class="green"><b>709</b> lines covered</span> and
-    <span class="red"><b>2</b> lines missed. </span>
+    <b>726</b> relevant lines,
+    <span class="green"><b>722</b> lines covered</span> and
+    <span class="red"><b>4</b> lines missed. </span>
     (<span class="green">
-  99.72%
+  99.45%
 </span>
 )
   </div>
@@ -94,11 +94,11 @@
         
           <tr class="t-file">
             <td class="strong t-file__name"><a href="#2b5efa2441c25d4a374b56c5f2fd1622282d3cda" class="src_link" title="app/controllers/reviews_controller.rb">app/controllers/reviews_controller.rb</a></td>
-            <td class="green strong cell--number t-file__coverage">100.00 %</td>
-            <td class="cell--number">46</td>
-            <td class="cell--number">23</td>
-            <td class="cell--number">23</td>
-            <td class="cell--number">0</td>
+            <td class="green strong cell--number t-file__coverage">93.10 %</td>
+            <td class="cell--number">64</td>
+            <td class="cell--number">29</td>
+            <td class="cell--number">27</td>
+            <td class="cell--number">2</td>
             <td class="cell--number">1.17</td>
             
           </tr>
@@ -403,11 +403,11 @@
           <tr class="t-file">
             <td class="strong t-file__name"><a href="#47436b614328703619d5fc6ef1b8c1429c618e62" class="src_link" title="spec/features/reviews/new_spec.rb">spec/features/reviews/new_spec.rb</a></td>
             <td class="green strong cell--number t-file__coverage">100.00 %</td>
-            <td class="cell--number">47</td>
-            <td class="cell--number">24</td>
-            <td class="cell--number">24</td>
+            <td class="cell--number">61</td>
+            <td class="cell--number">33</td>
+            <td class="cell--number">33</td>
             <td class="cell--number">0</td>
-            <td class="cell--number">1.08</td>
+            <td class="cell--number">1.12</td>
             
           </tr>
         
@@ -1210,7 +1210,7 @@
     <h3>app/controllers/reviews_controller.rb</h3>
     <h4>
       <span class="green">
-  100.0%
+  93.1%
 </span>
 
       lines covered
@@ -1219,9 +1219,9 @@
     
 
     <div class="t-line-summary">
-      <b>23</b> relevant lines.
-      <span class="green"><b>23</b> lines covered</span> and
-      <span class="red"><b>0</b> lines missed.</span>
+      <b>29</b> relevant lines.
+      <span class="green"><b>27</b> lines covered</span> and
+      <span class="red"><b>2</b> lines missed.</span>
     </div>
 
     
@@ -1254,8 +1254,8 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="2" data-linenumber="3">
-            <span class="hits">2</span>
+          <li class="covered" data-hits="3" data-linenumber="3">
+            <span class="hits">3</span>
             
 
             
@@ -1298,8 +1298,8 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="7">
-            <span class="hits">1</span>
+          <li class="covered" data-hits="2" data-linenumber="7">
+            <span class="hits">2</span>
             
 
             
@@ -1309,24 +1309,24 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="8">
+          <li class="covered" data-hits="2" data-linenumber="8">
+            <span class="hits">2</span>
+            
+
+            
+
+            <code class="ruby">    if params[:review][:user_name] == &quot;&quot;</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="9">
             <span class="hits">1</span>
             
 
             
 
-            <code class="ruby">    @user = User.find_by(name: params[:review][:user_name])</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="9">
-            
-            
-
-            
-
-            <code class="ruby">    # review = @user.reviews.create(review_params)</code>
+            <code class="ruby">      flash[:notice] = &quot;User name was not entered or does not exist.&quot;</code>
           </li>
         </div>
       
@@ -1337,73 +1337,73 @@
 
             
 
-            <code class="ruby">    @review = @user.reviews.create(review_params.merge(pic: params[:review][:pic]))</code>
+            <code class="ruby">      render :new</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="11">
+          <li class="never" data-hits="" data-linenumber="11">
+            
+            
+
+            
+
+            <code class="ruby">    else</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="12">
             <span class="hits">1</span>
             
 
             
 
-            <code class="ruby">    redirect_to &quot;/shelters/#{@shelter.id}&quot;</code>
+            <code class="ruby">      @user = User.find_by!(name: params[:review][:user_name])</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="12">
-            
-            
-
-            
-
-            <code class="ruby">  end</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="13">
-            
-            
-
-            
-
-            <code class="ruby"></code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="14">
+          <li class="covered" data-hits="1" data-linenumber="13">
             <span class="hits">1</span>
             
 
             
 
-            <code class="ruby">  def edit</code>
+            <code class="ruby">      review = @user.reviews.new(review_params)</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="2" data-linenumber="15">
-            <span class="hits">2</span>
+          <li class="never" data-hits="" data-linenumber="14">
+            
             
 
             
 
-            <code class="ruby">    @review = Review.find(params[:id])</code>
+            <code class="ruby">    # @review = Review.new({</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="2" data-linenumber="16">
-            <span class="hits">2</span>
+          <li class="never" data-hits="" data-linenumber="15">
+            
             
 
             
 
-            <code class="ruby">    @shelter = @review.shelter</code>
+            <code class="ruby">    #     title: params[:review][:title],</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="16">
+            
+            
+
+            
+
+            <code class="ruby">    #     rating: params[:review][:rating],</code>
           </li>
         </div>
       
@@ -1414,7 +1414,7 @@
 
             
 
-            <code class="ruby">  end</code>
+            <code class="ruby">    #     pic: params[:review][:pic],</code>
           </li>
         </div>
       
@@ -1425,51 +1425,51 @@
 
             
 
-            <code class="ruby"></code>
+            <code class="ruby">    #     content: params[:review][:content],</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="19">
-            <span class="hits">1</span>
+          <li class="never" data-hits="" data-linenumber="19">
+            
             
 
             
 
-            <code class="ruby">  def update</code>
+            <code class="ruby">    #     user_name: params[:review][:user_name],</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="20">
-            <span class="hits">1</span>
+          <li class="never" data-hits="" data-linenumber="20">
+            
             
 
             
 
-            <code class="ruby">    @user = User.find_by(name: params[:review][:user_name])</code>
+            <code class="ruby">    #     shelter_id: params[:review][:shelter_id],</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="21">
-            <span class="hits">1</span>
+          <li class="never" data-hits="" data-linenumber="21">
+            
             
 
             
 
-            <code class="ruby">    @review = Review.find(params[:id])</code>
+            <code class="ruby">    #     user_id: 1</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="22">
-            <span class="hits">1</span>
+          <li class="never" data-hits="" data-linenumber="22">
+            
             
 
             
 
-            <code class="ruby">    @review.update(review_params)</code>
+            <code class="ruby">    #   })</code>
           </li>
         </div>
       
@@ -1480,18 +1480,18 @@
 
             
 
-            <code class="ruby">    redirect_to &quot;/shelters/#{params[:review][:shelter_id]}&quot;</code>
+            <code class="ruby">      if review.save</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="24">
-            
-            
-
+          <li class="covered" data-hits="1" data-linenumber="24">
+            <span class="hits">1</span>
             
 
-            <code class="ruby">  end</code>
+            
+
+            <code class="ruby">        redirect_to &quot;/shelters/#{@shelter.id}&quot;</code>
           </li>
         </div>
       
@@ -1502,51 +1502,51 @@
 
             
 
-            <code class="ruby"></code>
+            <code class="ruby">      else</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="26">
-            <span class="hits">1</span>
+          <li class="missed" data-hits="0" data-linenumber="26">
+            
             
 
             
 
-            <code class="ruby">  def destroy</code>
+            <code class="ruby">        flash[:notice] = &quot;Review Not Created: Fields can not be empty.&quot;</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="27">
-            <span class="hits">1</span>
+          <li class="missed" data-hits="0" data-linenumber="27">
+            
             
 
             
 
-            <code class="ruby">    shelter = params[:shelter_id]</code>
+            <code class="ruby">        render :new</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="28">
-            <span class="hits">1</span>
+          <li class="never" data-hits="" data-linenumber="28">
+            
             
 
             
 
-            <code class="ruby">    Review.destroy(params[:id])</code>
+            <code class="ruby">      end</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="29">
-            <span class="hits">1</span>
+          <li class="never" data-hits="" data-linenumber="29">
+            
             
 
             
 
-            <code class="ruby">    redirect_to &quot;/shelters/#{shelter}&quot;</code>
+            <code class="ruby">    end</code>
           </li>
         </div>
       
@@ -1579,29 +1579,29 @@
 
             
 
-            <code class="ruby">  private</code>
+            <code class="ruby">  def edit</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="33">
-            <span class="hits">1</span>
+          <li class="covered" data-hits="2" data-linenumber="33">
+            <span class="hits">2</span>
             
 
             
 
-            <code class="ruby">  def review_params</code>
+            <code class="ruby">    @review = Review.find(params[:id])</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="34">
-            
-            
-
+          <li class="covered" data-hits="2" data-linenumber="34">
+            <span class="hits">2</span>
             
 
-            <code class="ruby">    # {</code>
+            
+
+            <code class="ruby">    @shelter = @review.shelter</code>
           </li>
         </div>
       
@@ -1612,7 +1612,7 @@
 
             
 
-            <code class="ruby">    #   title: params[:review][:title],</code>
+            <code class="ruby">  end</code>
           </li>
         </div>
       
@@ -1623,78 +1623,67 @@
 
             
 
-            <code class="ruby">    #   rating: params[:review][:rating],</code>
+            <code class="ruby"></code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="37">
-            
-            
-
+          <li class="covered" data-hits="1" data-linenumber="37">
+            <span class="hits">1</span>
             
 
-            <code class="ruby">    #   pic: params[:review][:pic],</code>
+            
+
+            <code class="ruby">  def update</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="38">
-            
-            
-
+          <li class="covered" data-hits="1" data-linenumber="38">
+            <span class="hits">1</span>
             
 
-            <code class="ruby">    #   content: params[:review][:content],</code>
+            
+
+            <code class="ruby">    @user = User.find_by(name: params[:review][:user_name])</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="39">
-            
-            
-
+          <li class="covered" data-hits="1" data-linenumber="39">
+            <span class="hits">1</span>
             
 
-            <code class="ruby">    #   user_name: params[:review][:user_name],</code>
+            
+
+            <code class="ruby">    @review = Review.find(params[:id])</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="40">
-            
-            
-
+          <li class="covered" data-hits="1" data-linenumber="40">
+            <span class="hits">1</span>
             
 
-            <code class="ruby">    #   shelter_id: params[:review][:shelter_id]</code>
+            
+
+            <code class="ruby">    @review.update(review_params)</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="41">
-            
-            
-
+          <li class="covered" data-hits="1" data-linenumber="41">
+            <span class="hits">1</span>
             
 
-            <code class="ruby">    # }</code>
+            
+
+            <code class="ruby">    redirect_to &quot;/shelters/#{params[:review][:shelter_id]}&quot;</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="2" data-linenumber="42">
-            <span class="hits">2</span>
-            
-
-            
-
-            <code class="ruby">    params.require(:review).permit(:title, :rating, :shelter_id, :content, :user_name, :user_)</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="43">
+          <li class="never" data-hits="" data-linenumber="42">
             
             
 
@@ -1705,7 +1694,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="44">
+          <li class="never" data-hits="" data-linenumber="43">
             
             
 
@@ -1716,7 +1705,62 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="45">
+          <li class="covered" data-hits="1" data-linenumber="44">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">  def destroy</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="45">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    shelter = params[:shelter_id]</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="46">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    Review.destroy(params[:id])</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="47">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    redirect_to &quot;/shelters/#{shelter}&quot;</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="48">
+            
+            
+
+            
+
+            <code class="ruby">  end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="49">
             
             
 
@@ -1727,7 +1771,161 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="46">
+          <li class="covered" data-hits="1" data-linenumber="50">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">  private</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="51">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">  def review_params</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="52">
+            
+            
+
+            
+
+            <code class="ruby">    # {</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="53">
+            
+            
+
+            
+
+            <code class="ruby">    #   title: params[:review][:title],</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="54">
+            
+            
+
+            
+
+            <code class="ruby">    #   rating: params[:review][:rating],</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="55">
+            
+            
+
+            
+
+            <code class="ruby">    #   pic: params[:review][:pic],</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="56">
+            
+            
+
+            
+
+            <code class="ruby">    #   content: params[:review][:content],</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="57">
+            
+            
+
+            
+
+            <code class="ruby">    #   user_name: params[:review][:user_name],</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="58">
+            
+            
+
+            
+
+            <code class="ruby">    #   shelter_id: params[:review][:shelter_id]</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="59">
+            
+            
+
+            
+
+            <code class="ruby">    # }</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="2" data-linenumber="60">
+            <span class="hits">2</span>
+            
+
+            
+
+            <code class="ruby">    params.require(:review).permit(:title, :rating, :shelter_id, :content, :user_name, :pic)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="61">
+            
+            
+
+            
+
+            <code class="ruby">  end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="62">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="63">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="64">
             
             
 
@@ -3453,7 +3651,7 @@
 
             
 
-            <code class="ruby">  has_many :reviews</code>
+            <code class="ruby">  has_many :reviews, dependent: :delete_all</code>
           </li>
         </div>
       
@@ -9446,8 +9644,8 @@
     
 
     <div class="t-line-summary">
-      <b>24</b> relevant lines.
-      <span class="green"><b>24</b> lines covered</span> and
+      <b>33</b> relevant lines.
+      <span class="green"><b>33</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
 
@@ -9503,8 +9701,8 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="2" data-linenumber="5">
-            <span class="hits">2</span>
+          <li class="covered" data-hits="3" data-linenumber="5">
+            <span class="hits">3</span>
             
 
             
@@ -9569,8 +9767,8 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="2" data-linenumber="11">
-            <span class="hits">2</span>
+          <li class="covered" data-hits="3" data-linenumber="11">
+            <span class="hits">3</span>
             
 
             
@@ -9971,7 +10169,161 @@
 
             
 
-            <code class="ruby">end</code>
+            <code class="ruby">  #User Story 9, Shelter Review Creation, Incomplete Form</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="48">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">  describe &quot;As a visitor,&quot;</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="49">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    describe &quot;When I visit the new review page&quot; do</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="50">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">      describe &quot;And I fail to enter a title, a rating, and/or content in the new shelter review form, but still try to submit the form&quot; do</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="51">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">        describe &quot;I see a flash message indicating that I need to fill in a title, rating, and content in order to submit a shelter review&quot; do</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="52">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">          it &quot;And I&#39;m returned to the new form to create a new review&quot; do</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="53">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">            visit &quot;/shelters/#{@shelter.id}/reviews/new&quot;</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="54">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">            click_on &#39;Submit Review&#39;</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="55">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">            expect(page).to have_content(&quot;User name was not entered or does not exist.&quot;)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="56">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">            expect(page).to have_button(&quot;Submit Review&quot;)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="57">
+            
+            
+
+            
+
+            <code class="ruby">          end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="58">
+            
+            
+
+            
+
+            <code class="ruby">        end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="59">
+            
+            
+
+            
+
+            <code class="ruby">      end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="60">
+            
+            
+
+            
+
+            <code class="ruby">    end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="61">
+            
+            
+
+            
+
+            <code class="ruby">  end</code>
           </li>
         </div>
       

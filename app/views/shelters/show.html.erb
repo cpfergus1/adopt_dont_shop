@@ -43,7 +43,12 @@
 <table class="Show" id='reviews'>
   <% @reviews.each do |review| %>
   <tr>
-      <td class="TableContent"><img src=<%=review.pic %> alt=<%= "#{review.user.name}" %> height=75 width=75><br>
+      <td class="TableContent">
+        <% if review.pic != "" %>
+            <img src=<%=review.pic %> alt=<%= "#{review.user.name}" %> height=75 width=75><br>
+        <% else %>
+            <img src= "https://www.computerhope.com/jargon/g/guest-user.jpg" alt=<%= "#{review.user.name}" %> height=75 width=75><br>
+        <% end %>
           <%= review.user.name %></td>
       <td> <p><%= review.title %> : <%=review.rating %>-stars</p>
            <p><%= review.content %></p>

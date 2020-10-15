@@ -5,10 +5,28 @@ class ReviewsController < ApplicationController
 
   def create
     @shelter = Shelter.find(params[:id])
-    @user = User.find_by(name: params[:review][:user_name])
-    # review = @user.reviews.create(review_params)
-    @review = @user.reviews.create(review_params.merge(pic: params[:review][:pic]))
-    redirect_to "/shelters/#{@shelter.id}"
+    if params[:review][:user_name] == ""
+      flash[:notice] = "User name was not entered or does not exist."
+      render :new
+    else
+      @user = User.find_by!(name: params[:review][:user_name])
+      review = @user.reviews.new(review_params)
+    # @review = Review.new({
+    #     title: params[:review][:title],
+    #     rating: params[:review][:rating],
+    #     pic: params[:review][:pic],
+    #     content: params[:review][:content],
+    #     user_name: params[:review][:user_name],
+    #     shelter_id: params[:review][:shelter_id],
+    #     user_id: 1
+    #   })
+      if review.save
+        redirect_to "/shelters/#{@shelter.id}"
+      else
+        flash[:notice] = "Review Not Created: Fields can not be empty."
+        render :new
+      end
+    end
   end
 
   def edit
@@ -39,7 +57,7 @@ class ReviewsController < ApplicationController
     #   user_name: params[:review][:user_name],
     #   shelter_id: params[:review][:shelter_id]
     # }
-    params.require(:review).permit(:title, :rating, :shelter_id, :content, :user_name, :user_)
+    params.require(:review).permit(:title, :rating, :shelter_id, :content, :user_name, :pic)
   end
 
 
