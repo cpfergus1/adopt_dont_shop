@@ -5,10 +5,6 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-Shelter.destroy.all
-User.destroy.all
-
-
 Shelter.create!([
   {id: 1, name: "Windsor Animal Shelter", address: "3321 Windsor Lane", city: "Windsor", state: "Colorado", zip: 80550},
   {id: 2, name: "Denver Animal Shelter", address: "3321 Denver Lane", city: "Denver", state: "Colorado", zip: 80234}
