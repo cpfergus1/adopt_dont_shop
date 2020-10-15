@@ -44,8 +44,7 @@ describe "As a visitor," do
       end
     end
   end
-  #User Story 9, Shelter Review Creation, Incomplete Form
-  describe "As a visitor,"
+  #User Story 10, Shelter Review Creation, No user name
     describe "When I visit the new review page" do
       describe "And I fail to enter a title, a rating, and/or content in the new shelter review form, but still try to submit the form" do
         describe "I see a flash message indicating that I need to fill in a title, rating, and content in order to submit a shelter review" do
@@ -58,4 +57,18 @@ describe "As a visitor," do
         end
       end
     end
-  end
+    #User Story 9, Shelter Review Creation, incomplete form
+      describe "When I visit the new review page" do
+        describe "And I fail to enter a title, a rating, and/or content in the new shelter review form, but still try to submit the form" do
+          describe "I see a flash message indicating that I need to fill in a title, rating, and content in order to submit a shelter review" do
+            it "And I'm returned to the new form to create a new review" do
+              visit "/shelters/#{@shelter.id}/reviews/new"
+              fill_in 'review[user_name]', with: "Bob"
+              click_on 'Submit Review'
+              expect(page).to have_content("Review Not Created: Fields can not be empty.")
+              expect(page).to have_button("Submit Review")
+            end
+          end
+        end
+      end
+    end
