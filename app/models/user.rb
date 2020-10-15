@@ -6,5 +6,15 @@ class User < ApplicationRecord
   validates_presence_of :zip
   has_many :reviews, dependent: :delete_all
 
+  def average_rating
+    Review.where(user_id: self.id).average(:rating)
+  end
 
+  def highest_rating
+    Review.where(user_id: self.id).order('rating desc').limit(1)
+  end
+
+  def lowest_rating
+    Review.where(user_id: self.id).order('rating asc').limit(1)
+  end
 end

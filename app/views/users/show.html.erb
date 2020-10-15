@@ -30,10 +30,13 @@
 </body>
 <br>
 <br>
+
+<h3 id = "avg">Average Rating: <%= @user.average_rating %></h3>
+<section id = "User Reviews">
 <table class="Show">
   <% @reviews.each do |review| %>
   <tr>
-      <td class="TableContent"><img src=<%=review.pic %> alt=<%= "#{review.user.name}" %> height=75 width=75><br>
+      <td class="TableContent"><img src=<%= review.pic %> alt=<% review.user.name %> height=75 width=75/><br>
           <%= review.user.name %></td>
       <td> <p><%= review.title %> : <%=review.rating %>-stars</p>
            <p><%= review.content %></p>
@@ -41,3 +44,18 @@
   </tr>
   <% end %>
   </table>
+  </section>
+
+  <br>
+
+  <section id = "Highlighted Reviews">
+  <table class="Show">
+    <tr>
+        <td class="TableContent"><img src=<%= @user.highest_rating.first.pic %> alt=<% @user.name %> height=75 width=75/><br>
+            <%= @user.name %></td>
+        <td> <p><%= @user.highest_rating.first.title %> : <%=@user.highest_rating.first.rating %>-stars</p>
+             <p><%= @user.highest_rating.first.content %></p>
+        </td>
+    </tr>
+    </table>
+    </section>
