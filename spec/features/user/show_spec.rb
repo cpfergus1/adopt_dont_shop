@@ -17,7 +17,7 @@ describe 'As a visitor' do
       zip: 8)
 
     @review_1 = @user.reviews.create!(title: "Good",
-      rating: "4",
+      rating: "2",
       content: "Testy test",
       shelter_id: @shelter.id,
       user_name: "name",
@@ -33,20 +33,20 @@ describe 'As a visitor' do
     )
     @review_3 = @user.reviews.create!(title: "BAD",
       rating: "1",
-      content: "Testy mc test test",
+      content: "Testy mc test test Lowest",
       shelter_id: @shelter.id,
       user_name: "name",
       pic: "image"
     )
     @review_4 = @user.reviews.create!(title: "COOL",
       rating: "4",
-      content: "Testy mc test test",
+      content: "Testy mc test test Highest",
       shelter_id: @shelter.id,
       user_name: "name",
       pic: "image"
     )
   end
-  
+
   describe "When I visit a User's show page" do
     it "Then I see all that User's information" do
       #Including the User's
@@ -83,7 +83,7 @@ describe 'As a visitor' do
       it "I see the average rating of all of their reviews" do
         visit "/users/#{@user.id}"
         within('h3#avg') do
-          expect(page).to have_content(3.0)
+          expect(page).to have_content(2.5)
         end
       end
     end
@@ -95,6 +95,14 @@ describe 'As a visitor' do
     describe "When I visit a User's show page" do
       it "I see a section for 'Highlighted Reviews' for a users best/worst reviews " do
         visit "/users/#{@user.id}"
+        within ("#HighlightedReviews") do
+          expect(page).to have_content(@review_3.title)
+          expect(page).to have_content(@review_4.title)
+          expect(page).to have_content(@review_3.rating)
+          expect(page).to have_content(@review_4.rating)
+          expect(page).to have_content(@review_3.content)
+          expect(page).to have_content(@review_4.content)
+        end
       end
     end
   end
