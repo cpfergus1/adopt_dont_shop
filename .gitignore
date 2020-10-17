@@ -24,6 +24,12 @@
 .byebug_history
 
 # Ignore master key for decrypting credentials and more.
+<<<<<<< HEAD
 /config/master.
 /coverage/index.html
 /coverage/index.html
+=======
+/config/master.key
+
+/coverage
+>>>>>>> 4eeee9e7d3c8f0b3d3a291143545c69e449c8ec7
