@@ -10,10 +10,30 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_13_002106) do
+ActiveRecord::Schema.define(version: 2020_10_17_190956) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "apps", force: :cascade do |t|
+    t.string "description"
+    t.string "status"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "pet_apps_id"
+    t.bigint "user_id"
+    t.index ["pet_apps_id"], name: "index_apps_on_pet_apps_id"
+    t.index ["user_id"], name: "index_apps_on_user_id"
+  end
+
+  create_table "pet_apps", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "pet_id"
+    t.bigint "app_id"
+    t.index ["app_id"], name: "index_pet_apps_on_app_id"
+    t.index ["pet_id"], name: "index_pet_apps_on_pet_id"
+  end
 
   create_table "pets", force: :cascade do |t|
     t.string "image", default: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Comic_image_missing.svg/1200px-Comic_image_missing.svg.png"
@@ -23,6 +43,8 @@ ActiveRecord::Schema.define(version: 2020_10_13_002106) do
     t.string "sex", default: "Not Provided"
     t.string "status", default: "Available"
     t.bigint "shelter_id"
+    t.bigint "pet_apps_id"
+    t.index ["pet_apps_id"], name: "index_pets_on_pet_apps_id"
     t.index ["shelter_id"], name: "index_pets_on_shelter_id"
   end
 
@@ -54,6 +76,11 @@ ActiveRecord::Schema.define(version: 2020_10_13_002106) do
     t.integer "zip"
   end
 
+  add_foreign_key "apps", "pet_apps", column: "pet_apps_id"
+  add_foreign_key "apps", "users"
+  add_foreign_key "pet_apps", "apps"
+  add_foreign_key "pet_apps", "pets"
+  add_foreign_key "pets", "pet_apps", column: "pet_apps_id"
   add_foreign_key "pets", "shelters"
   add_foreign_key "reviews", "shelters"
   add_foreign_key "reviews", "users"

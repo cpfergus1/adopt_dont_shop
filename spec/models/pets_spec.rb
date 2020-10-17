@@ -11,7 +11,7 @@ describe Pet, type: :model do
       should validate_presence_of :status
       should belong_to :shelter
       should have_many :pet_apps
-      should have_many :applications, through: :pet_apps
+      should have_many(:apps).through(:pet_apps)
     end
   end
 end
