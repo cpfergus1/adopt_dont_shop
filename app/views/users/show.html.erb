@@ -58,7 +58,7 @@
         </td>
     </tr>
     <tr>
-        <td class="TableContent"><img src=<%= @user.lowest_rating&.pic || '' %> alt=<% @user.name %> height=75 width=75/><br>
+        <td class="TableContent"><img src=<%= @user.lowest_rating&.pic || 'No Info' %> alt=<% @user.name %> height=75 width=75/><br>
             <%= @user.name %></td>
         <td> <p><%= @user.lowest_rating&.title || 'No Info' %> : <%=@user.lowest_rating&.rating || 'No Info' %>-stars</p>
              <p><%= @user.lowest_rating&.content || 'No Info' %></p>

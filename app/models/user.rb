@@ -5,6 +5,7 @@ class User < ApplicationRecord
   validates_presence_of :state
   validates_presence_of :zip
   has_many :reviews, dependent: :delete_all
+  has_many :applications, dependent: :delete_all
 
   def average_rating
     Review.where(user_id: self.id).average(:rating)
