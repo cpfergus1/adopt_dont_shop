@@ -1,0 +1,35 @@
+<head>
+  <%= csrf_meta_tags %>
+
+  <%= stylesheet_link_tag    'application', media: 'all' %>
+  <%= javascript_include_tag 'application' %>
+</head>
+
+<body>
+<h2 align="center">Application ID: <%= @application.id %></h2>
+<table class= "Show">
+  <tr>
+    <td>Addopter Name:</td>
+    <td><%= @user.name %></td>
+  </tr>
+  <tr>
+    <td>Addopter's Address:</td>
+    <td><%= "#{@user.address}\n #{@user.city}, #{@user.state} #{@user.zip}"  %></td>
+  </tr>
+  <tr>
+    <td> Pets to be adopted:</td>
+    <td> <% @pets.each do |pet| %>
+        <a href="/pets/<%=pet.id %>" id = <%= pet.name%>> <%= pet.name %> </a>
+        <% end %>
+    </td>
+  </tr>
+  <tr>
+    <td>Description: </td>
+    <td><%= @application.description %></td>
+  </tr>
+  <tr>
+    <td>Application Status:</td>
+    <td><%= @application.status %></td>
+  </tr>
+</table>
+</body>
