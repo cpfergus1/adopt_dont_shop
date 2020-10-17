@@ -10,10 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_13_002106) do
+ActiveRecord::Schema.define(version: 2020_10_16_011605) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "applications", force: :cascade do |t|
+    t.string "user_name"
+    t.string "user_address"
+    t.string "description"
+    t.string "pet_names"
+    t.string "status"
+  end
 
   create_table "pets", force: :cascade do |t|
     t.string "image", default: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Comic_image_missing.svg/1200px-Comic_image_missing.svg.png"

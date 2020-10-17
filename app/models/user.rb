@@ -11,26 +11,10 @@ class User < ApplicationRecord
   end
 
   def highest_rating
-    highest = Review.where(user_id: self.id).order('rating desc').limit(1).first
-    if highest
-      highest
-    else
-      {pic: "No info",
-        title: "No info",
-        content: "No info",
-        rating: "No info"}
-    end
+    Review.where(user_id: self.id).order('rating desc').limit(1).first
   end
 
   def lowest_rating
-    lowest = Review.where(user_id: self.id).order('rating asc').limit(1).first
-    if lowest
-      lowest
-    else
-      {pic: "No info",
-        title: "No info",
-        content: "No info",
-        rating: "No info"}
-    end
+    Review.where(user_id: self.id).order('rating asc').limit(1).first
   end
 end

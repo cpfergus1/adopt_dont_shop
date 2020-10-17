@@ -51,17 +51,17 @@
   <section id = "HighlightedReviews">
   <table class="Show">
     <tr>
-        <td class="TableContent"><img src=<%= @user.highest_rating[:pic] %> alt=<% @user.name %> height=75 width=75/><br>
+        <td class="TableContent"><img src=<%= @user.highest_rating&.pic || 'No Info' %> alt=<% @user.name %> height=75 width=75/><br>
             <%= @user.name %></td>
-        <td> <p><%= @user.highest_rating[:title] %> : <%=@user.highest_rating[:rating] %>-stars</p>
-             <p><%= @user.highest_rating[:content] %></p>
+        <td> <p><%= @user.highest_rating&.title || 'No info' %> : <%=@user.highest_rating&.rating || 'No info' %>-stars</p>
+             <p><%= @user.highest_rating&.content || 'No info' %></p>
         </td>
     </tr>
     <tr>
-        <td class="TableContent"><img src=<%= @user.lowest_rating[:pic] %> alt=<% @user.name %> height=75 width=75/><br>
+        <td class="TableContent"><img src=<%= @user.lowest_rating&.pic || 'No Info' %> alt=<% @user.name %> height=75 width=75/><br>
             <%= @user.name %></td>
-        <td> <p><%= @user.lowest_rating[:title] %> : <%=@user.lowest_rating[:rating] %>-stars</p>
-             <p><%= @user.lowest_rating[:content] %></p>
+        <td> <p><%= @user.lowest_rating&.title || 'No info' %> : <%=@user.lowest_rating&.rating || 'No info' %>-stars</p>
+             <p><%= @user.lowest_rating&.content || 'No info' %></p>
         </td>
     </tr>
     </table>
