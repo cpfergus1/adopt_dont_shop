@@ -1,0 +1,18 @@
+<head>
+  <%= csrf_meta_tags %>
+
+  <%= stylesheet_link_tag    'application', media: 'all' %>
+  <%= javascript_include_tag 'application' %>
+</head>
+
+<body>
+<form action="/apps/" method="post">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  <input type='hidden' name="_method" value='POST'>
+  <input type="hidden" name="app[status]" value="In Progress">
+
+  <p>Please Enter User Name:</p>
+  <label>Name:</label><input type='text' name='user[name]'/><br>
+  <label></label><input type='submit' value="Submit"/>
+</form>
+<body>
