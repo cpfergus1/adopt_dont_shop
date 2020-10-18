@@ -25,7 +25,7 @@ describe "As a visitor" do
       sex: 'sex',
       status: 'status')
 
-    @application = @user.apps.create(description: "",
+    @application = @user.apps.create(
       status: 'In Progress')
 
       PetApp.create!(pet: @pet1, app: @application)
@@ -98,13 +98,18 @@ describe "As a visitor" do
   #User Story 22, Incomplete application for Pets
 
   describe "When I visit an application's show page" do
+    before(:each) do
+      click_on("Submit Application")
+    end
     describe 'And I have added one or more pets to the application' do
       describe 'And I fail to enter why I would make a good owner for these pet(s)' do
         it "Then I am taken back to the application's show page" do
           expect(current_path).to eq("/apps/#{@application.id}")
         end
         it "And I see a flash message that I need to fill out that field before I can submit the application" do
-          expect(page).to have_content('Must fill out description field before submitting application')
+          within('#flash') do
+            expect(page).to have_content('Must fill out description field before submitting application')
+          end
         end
         it 'And I see my application is still "In Progress"' do
           expect(page).to have_content('In Progress')
