@@ -7,16 +7,20 @@ class AppsController < ApplicationController
     @application = App.find(params[:id])
     @user = @application.user
     @pets = @application.pets
+    if params[:name]
+      @targets = Pet.where(name: params[:name])
+    else
+      @targets = []
+    end
   end
 
-  def search
-    @application = App.find(params[:app_id])
-    @user = @application.user
-    @pets = @application.pets
-    @pet = Pet.all.order('name ASC')
-    @targets = @pet.find_by(name: params[:name]) if params[:name].present?
-    render :show
-  end
+  # def search
+  #   @application = App.find(params[:app_id])
+  #   @user = @application.user
+  #   @pets = @application.pets
+  #   @pet = Pet.all.order('name ASC')
+  #   render :show
+  # end
 
   def new
   end

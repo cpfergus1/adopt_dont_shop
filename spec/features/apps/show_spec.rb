@@ -56,9 +56,9 @@ describe "As a visitor when I visit an application's show page" do
           visit "/apps/#{@application.id}"
           expect(page).to have_content("Add a Pet to this Application")
 
-          fill_in 'Pets by name', with: "#{@pet1.name}"
+          fill_in :name, with: "#{@pet1.name}"
           click_on "Submit"
-          
+
           expect(current_path).to eq("/apps/#{@application.id}")
           expect(page).to have_content("#{@pet1.name}")
           end

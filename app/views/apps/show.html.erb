@@ -35,7 +35,7 @@
 </table>
 </body>
 <section align = "center">
-<form action="/apps/:id/search" method="get">
+<form action="/apps/<%= @application.id %>" method="get">
   <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
   <input type="hidden" name="_method" value="post">
   <input type="hidden" name="app_id" value="<%= @application.id %>">
