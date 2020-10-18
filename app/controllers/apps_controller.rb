@@ -14,13 +14,15 @@ class AppsController < ApplicationController
     end
   end
 
-  # def search
-  #   @application = App.find(params[:app_id])
-  #   @user = @application.user
-  #   @pets = @application.pets
-  #   @pet = Pet.all.order('name ASC')
-  #   render :show
-  # end
+  def update
+    @application = App.find(params[:id])
+    @pet = Pet.find(params[:pet_id])
+    check_existence = @application.pets.select(@pet.id) 
+    if check_existence == []
+      @application.pets << @pet
+    end
+    redirect_to "/apps/#{params[:id]}"
+  end
 
   def new
   end

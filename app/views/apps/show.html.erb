@@ -44,8 +44,13 @@
   <label></label><input type='submit' value='Submit'/>
   </section>
   <br>
-  <section>
-    <% @targets.each do |target| %>
-    <%= target.name %>
-    <% end %>
+  <section align = "center">
+    <table class ="Show">
+      <% @targets.each do |target| %>
+        <tr id ="target_<%=target.name%>">
+          <td> <%= target.name %></td>
+          <td> <%= link_to 'Add Pet', {:action => "update",:pet_id => target.id, :id=> @application.id}, method: "patch", class:"button"%></td>
+        </tr>
+      <% end %>
+    </table>
   </section>

@@ -31,11 +31,11 @@ describe "As a visitor" do
 
     PetApp.create!(pet: @pet1, app: @application)
     PetApp.create!(pet: @pet, app: @application)
+    visit "/apps/#{@application.id}"
   end
 describe 'When I visit an applications show page "/applications/:id"' do
   it "Then I can see the following:" do
 
-    visit "/apps/#{@application.id}"
     expect(page).to have_content(@user.name)
     expect(page).to have_content(@user.address)
     expect(page).to have_content(@application.description)
@@ -53,7 +53,6 @@ describe "As a visitor when I visit an application's show page" do
       describe "I can search for pets by name and when I click submit" do
         it "I am taken back to the application show page and see the pet that matches my search." do
 
-          visit "/apps/#{@application.id}"
           expect(page).to have_content("Add a Pet to this Application")
 
           fill_in :name, with: "#{@pet1.name}"
@@ -61,6 +60,31 @@ describe "As a visitor when I visit an application's show page" do
 
           expect(current_path).to eq("/apps/#{@application.id}")
           expect(page).to have_content("#{@pet1.name}")
+          end
+        end
+      end
+    end
+  end
+  #User Story 19, Add a Pet to an Application
+  describe 'As a visitor' do
+    describe "When I visit an application's show page" do
+      describe "And I search for a Pet by name" do
+        describe "And I see the names Pets that matches my search" do
+          it 'Then next to each Pets name I see a button to "Adopt this Pet"' do
+            fill_in :name, with: "#{@pet1.name}"
+            click_on "Submit"
+            expect(page).to have_link("Add Pet")
+          end
+          describe 'When I click one of these buttons' do
+            describe 'Then I am taken back to the application show page' do
+              it 'And I see the Pet I want to adopt listed on this application' do
+                fill_in :name, with: "#{@pet1.name}"
+                click_on "Submit"
+                click_link ("Add Pet")
+                within("##{@pet.name}")
+                expect(page).to have_link("#{@pet.name}")
+              end
+            end
           end
         end
       end

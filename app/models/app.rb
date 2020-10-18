@@ -3,4 +3,6 @@ class App <  ApplicationRecord
   has_many :pets, through: :pet_apps
   belongs_to :user
   validates_presence_of :status
+
+
 end

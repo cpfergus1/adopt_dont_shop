@@ -132,5 +132,16 @@ textarea {
 }
 p {
   font-weight: bold;
-  font-size: 20px; 
+  font-size: 20px;
+}
+a.button {
+  background-color: #823b3b;
+  color: white;
+  padding: 7px 12px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+a.button:hover {
+  background-color: #a74f4f;
 }
