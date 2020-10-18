@@ -90,4 +90,27 @@ describe "As a visitor when I visit an application's show page" do
       end
     end
   end
+  #User Story 20, Submit an Application
+
+
+  describe "When I visit an application's show page" do
+    describe "And I have added one or more pets to the application" do
+      describe "Then I see a section to submit my application" do
+        describe "And in that section I see an input to enter why I would make a good owner for these pet(s)" do
+          describe "When I fill in that input" do
+            describe "And I click a button to submit this application" do
+              descibe "Then I am taken back to the application's show page" do
+                describe 'And I see an indicator that the application is "Pending"' do
+                  describe 'And I see all the pets that I want to adopt' do
+                    it "And I do not see a section to add more pets to this application" do
+                    end
+                  end
+                end
+              end
+            end
+          end
+        end
+      end
+    end
+  end
 end

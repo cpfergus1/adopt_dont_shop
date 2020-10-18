@@ -44,7 +44,7 @@
   <label></label><input type='submit' value='Submit'/>
   </section>
   <br>
-  <section align = "center">
+  <section align = "left">
     <table class ="Show">
       <% @targets.each do |target| %>
         <tr id ="target_<%=target.name%>">
@@ -54,3 +54,14 @@
       <% end %>
     </table>
   </section>
+  <!-- <section id = "submit_app">
+    <section align = "center">
+    <form action="/apps/<%= @application.id %>" method="get">
+      <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+      <input type="hidden" name="_method" value="PATCH">
+      <input type="hidden" name="app_id" value="<%= @application.id %>">
+
+      <p>Why would you make a good pet owner:</p>
+      <input type="text" name= "description">
+      <label></label><input type='submit' value='Submit Application'/>
+      </section> -->
