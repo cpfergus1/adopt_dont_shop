@@ -269,6 +269,8 @@
           1,
           1,
           null,
+          null,
+          1,
           1,
           1,
           1,
@@ -288,61 +290,80 @@
           null
         ]
       },
-<<<<<<< HEAD
-      "/Users/johnk/mod2/projects/proj2/adopt_dont_shop/spec/features/pets/pets_spec.rb": {
-=======
-      "/Users/cpfergus1/turing/module2/adopt_dont_shop/spec/features/apps/show_spec.rb": {
+      "/Users/johnk/mod2/projects/proj2/adopt_dont_shop/spec/features/apps/show_spec.rb": {
         "lines": [
           null,
           1,
           null,
           1,
           1,
-          1,
+          2,
           null,
           null,
           null,
           null,
-          1,
+          2,
           null,
           null,
           null,
           null,
-          1,
-          null,
-          null,
-          null,
-          null,
-          null,
-          1,
+          2,
           null,
           null,
           null,
           null,
           null,
+          2,
           null,
-          1,
           null,
           null,
-          1,
-          1,
           null,
-          1,
-          1,
+          null,
+          null,
+          2,
+          null,
+          null,
+          2,
+          2,
           null,
           1,
           1,
+          null,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          null,
+          null,
+          null,
+          null,
           1,
           1,
           1,
           1,
           1,
+          null,
+          1,
+          0,
+          null,
+          0,
+          0,
+          null,
+          0,
+          0,
+          null,
+          null,
+          null,
           null,
           null,
           null
         ]
       },
-      "/Users/cpfergus1/turing/module2/adopt_dont_shop/spec/features/pets/new_spec.rb": {
+      "/Users/johnk/mod2/projects/proj2/adopt_dont_shop/spec/features/pets/new_spec.rb": {
         "lines": [
           null,
           1,
@@ -408,8 +429,7 @@
           null
         ]
       },
-      "/Users/cpfergus1/turing/module2/adopt_dont_shop/spec/features/pets/pets_spec.rb": {
->>>>>>> 4eeee9e7d3c8f0b3d3a291143545c69e449c8ec7
+      "/Users/johnk/mod2/projects/proj2/adopt_dont_shop/spec/features/pets/pets_spec.rb": {
         "lines": [
           1,
           null,
@@ -713,6 +733,24 @@
           null,
           null,
           4,
+          null,
+          null,
+          null,
+          null,
+          4,
+          null,
+          null,
+          null,
+          null,
+          null,
+          4,
+          null,
+          null,
+          null,
+          null,
+          null,
+          4,
+          null,
           null,
           null,
           null,
@@ -1396,11 +1434,7 @@
           null
         ]
       },
-<<<<<<< HEAD
-      "/Users/johnk/mod2/projects/proj2/adopt_dont_shop/spec/models/pets_spec.rb": {
-=======
-      "/Users/cpfergus1/turing/module2/adopt_dont_shop/spec/models/app_spec.rb": {
->>>>>>> 4eeee9e7d3c8f0b3d3a291143545c69e449c8ec7
+      "/Users/johnk/mod2/projects/proj2/adopt_dont_shop/spec/models/app_spec.rb": {
         "lines": [
           1,
           1,
@@ -1415,7 +1449,7 @@
           null
         ]
       },
-      "/Users/cpfergus1/turing/module2/adopt_dont_shop/app/models/app.rb": {
+      "/Users/johnk/mod2/projects/proj2/adopt_dont_shop/app/models/app.rb": {
         "lines": [
           1,
           1,
@@ -1425,63 +1459,36 @@
           null
         ]
       },
-      "/Users/cpfergus1/turing/module2/adopt_dont_shop/app/models/application_record.rb": {
-        "lines": [
-          1,
-          1,
-          null
-        ]
-      },
-      "/Users/cpfergus1/turing/module2/adopt_dont_shop/spec/models/pet_apps_spec.rb": {
-        "lines": [
-          1,
-          null,
-          1,
-          1,
-          1,
-          1,
-          null,
-          null
-        ]
-      },
-<<<<<<< HEAD
-      "/Users/johnk/mod2/projects/proj2/adopt_dont_shop/app/models/pet.rb": {
-=======
-      "/Users/cpfergus1/turing/module2/adopt_dont_shop/app/models/pet_app.rb": {
->>>>>>> 4eeee9e7d3c8f0b3d3a291143545c69e449c8ec7
-        "lines": [
-          1,
-          1,
-          1,
-          null
-        ]
-      },
-      "/Users/cpfergus1/turing/module2/adopt_dont_shop/spec/models/pets_spec.rb": {
-        "lines": [
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          null,
-          null,
-          null
-        ]
-      },
-<<<<<<< HEAD
       "/Users/johnk/mod2/projects/proj2/adopt_dont_shop/app/models/application_record.rb": {
-=======
-      "/Users/cpfergus1/turing/module2/adopt_dont_shop/app/models/pet.rb": {
->>>>>>> 4eeee9e7d3c8f0b3d3a291143545c69e449c8ec7
+        "lines": [
+          1,
+          1,
+          null
+        ]
+      },
+      "/Users/johnk/mod2/projects/proj2/adopt_dont_shop/spec/models/pet_apps_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/johnk/mod2/projects/proj2/adopt_dont_shop/app/models/pet_app.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/johnk/mod2/projects/proj2/adopt_dont_shop/spec/models/pets_spec.rb": {
         "lines": [
           1,
           1,
@@ -1494,6 +1501,33 @@
           1,
           1,
           1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/johnk/mod2/projects/proj2/adopt_dont_shop/app/models/pet.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
           null,
           null,
           null
@@ -1607,11 +1641,7 @@
           null
         ]
       },
-<<<<<<< HEAD
-      "/Users/johnk/mod2/projects/proj2/adopt_dont_shop/app/controllers/shelters_controller.rb": {
-=======
-      "/Users/cpfergus1/turing/module2/adopt_dont_shop/app/controllers/pets_controller.rb": {
->>>>>>> 4eeee9e7d3c8f0b3d3a291143545c69e449c8ec7
+      "/Users/johnk/mod2/projects/proj2/adopt_dont_shop/app/controllers/pets_controller.rb": {
         "lines": [
           1,
           1,
@@ -1665,51 +1695,53 @@
           null
         ]
       },
-      "/Users/cpfergus1/turing/module2/adopt_dont_shop/app/controllers/application_controller.rb": {
-        "lines": [
-          1,
-          null
-        ]
-      },
-      "/Users/cpfergus1/turing/module2/adopt_dont_shop/app/controllers/apps_controller.rb": {
-        "lines": [
-          1,
-          null,
-          1,
-          2,
-          2,
-          2,
-          null,
-          null,
-          1,
-          null,
-          null,
-          1,
-          1,
-          1,
-          null,
-          1,
-          1,
-          null,
-          0,
-          0,
-          null,
-          null,
-          null,
-          null
-        ]
-      },
-<<<<<<< HEAD
       "/Users/johnk/mod2/projects/proj2/adopt_dont_shop/app/controllers/application_controller.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/Users/johnk/mod2/projects/proj2/adopt_dont_shop/app/controllers/pets_controller.rb": {
-=======
-      "/Users/cpfergus1/turing/module2/adopt_dont_shop/app/controllers/shelters_controller.rb": {
->>>>>>> 4eeee9e7d3c8f0b3d3a291143545c69e449c8ec7
+      "/Users/johnk/mod2/projects/proj2/adopt_dont_shop/app/controllers/apps_controller.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          null,
+          null,
+          1,
+          3,
+          3,
+          3,
+          null,
+          null,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          null,
+          1,
+          null,
+          null,
+          1,
+          2,
+          2,
+          1,
+          null,
+          1,
+          null,
+          1,
+          1,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/johnk/mod2/projects/proj2/adopt_dont_shop/app/controllers/shelters_controller.rb": {
         "lines": [
           1,
           1,
@@ -1871,10 +1903,6 @@
         ]
       }
     },
-<<<<<<< HEAD
-    "timestamp": 1602954977
-=======
-    "timestamp": 1602971441
->>>>>>> 4eeee9e7d3c8f0b3d3a291143545c69e449c8ec7
+    "timestamp": 1602985663
   }
 }

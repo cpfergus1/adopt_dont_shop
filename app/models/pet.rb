@@ -10,5 +10,11 @@ class Pet < ApplicationRecord
   validates_presence_of :shelter_id
   validates_presence_of :status
 
-
+  # def self.search(search)
+  #   if search
+  #     Pet.find_by(name: search)
+  #   else
+  #     Pet.all
+  #   end
+  # end
 end

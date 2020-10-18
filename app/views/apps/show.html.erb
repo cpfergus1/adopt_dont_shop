@@ -9,11 +9,11 @@
 <h2 align="center">Application ID: <%= @application.id %></h2>
 <table class= "Show">
   <tr>
-    <td>Addopter Name:</td>
+    <td>Adopter Name:</td>
     <td><%= @user.name %></td>
   </tr>
   <tr>
-    <td>Addopter's Address:</td>
+    <td>Adopter's Address:</td>
     <td><%= "#{@user.address}\n #{@user.city}, #{@user.state} #{@user.zip}"  %></td>
   </tr>
   <tr>
@@ -23,6 +23,7 @@
         <% end %>
     </td>
   </tr>
+
   <tr>
     <td>Description: </td>
     <td><%= @application.description %></td>
@@ -33,3 +34,18 @@
   </tr>
 </table>
 </body>
+<section align = "center">
+<form action="/apps/:id/search" method="get">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  <input type="hidden" name="_method" value="post">
+  <input type="hidden" name="app_id" value="<%= @application.id %>">
+  <p>Add a Pet to this Application:</p>
+  <input type="text" name= "name" placeholder="Search Pets">
+  <label></label><input type='submit' value='Submit'/>
+  </section>
+  <br>
+  <section>
+    <% @targets.each do |target| %>
+    <%= target.name %>
+    <% end %>
+  </section>

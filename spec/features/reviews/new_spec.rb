@@ -13,6 +13,24 @@ describe "As a visitor," do
                             city: 'city',
                             state: 'state',
                             zip: '8')
+    @pet = @shelter.pets.create(image: 'image',
+      name: 'Joey',
+      description: 'description',
+      age: '1',
+      sex: 'sex',
+      status: 'status')
+    @pet1 = @shelter.pets.create(image: 'image',
+      name: 'James',
+      description: 'description',
+      age: '1',
+      sex: 'sex',
+      status: 'status')
+    @pet2 = @shelter.pets.create(image: 'image',
+      name: 'Steve',
+      description: 'description',
+      age: '1',
+      sex: 'sex',
+      status: 'status')
     end
 
   describe "When I visit a shelter's show page" do

@@ -39,4 +39,16 @@ describe 'As a visitor' do
       end
     end
   end
+  # User Story 17, Starting an Application, User not found
+
+  describe "As a visitor, when I visit the new application page" do
+    describe "And I fill in the form with the name of a User that doesn't exist in the database" do
+      it "I am taken back to the new app page and see a message that user could not be found" do
+        visit '/apps/new'
+        fill_in 'user[name]', with: 'Steve'
+        click_button('Submit')
+        expect(page).to have_content("Application not Created: User not found or no entry")
+      end
+    end
+  end
 end
