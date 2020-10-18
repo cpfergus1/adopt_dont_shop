@@ -29,13 +29,12 @@ describe "As a visitor" do
     @application = @user.apps.create(description: "",
       status: 'In Progress')
 
-      PetApp.create!(pet: @pet1, app: @application)
-      PetApp.create!(pet: @pet, app: @application)
-
-      end
+    end
 
   describe 'When I visit an applications show page "/applications/:id"' do
     it "Then I can see the following:" do
+      PetApp.create!(pet: @pet1, app: @application)
+      PetApp.create!(pet: @pet, app: @application)
       visit "/apps/#{@application.id}"
       expect(page).to have_content(@user.name)
       expect(page).to have_content(@user.address)
@@ -63,6 +62,16 @@ describe "As a visitor" do
             expect(page).to have_content("#{@pet1.name}")
           end
         end
+      end
+    end
+  end
+  #User Story 21, No Pets on an Application
+
+  describe "When I visit an application's show page" do
+    describe "And I have not added any pets to the application" do
+      it "Then I do not see a section to submit my application" do
+        visit "/apps/#{@application.id}"
+        expect(page).to_not have_content("Why would you make a good pet owner:")
       end
     end
   end

@@ -54,6 +54,7 @@
     </table>
   </section>
   <% end %>
+  <% if @pets != [] %>
     <section id = "submit_app">
     <section align = "center">
     <form action="/apps/<%= @application.id %>" method="post">
@@ -66,3 +67,4 @@
       <input type="text" name= "description">
       <label></label><input type='submit' value='Submit Application'/>
       </section>
+  <% end %>
