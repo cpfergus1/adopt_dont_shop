@@ -25,7 +25,7 @@ describe "As a visitor" do
       sex: 'sex',
       status: 'status')
 
-    @application = @user.apps.create(
+    @application = @user.apps.create(description: "",
       status: 'In Progress')
 
       PetApp.create!(pet: @pet1, app: @application)
@@ -109,6 +109,7 @@ describe "As a visitor" do
         it "And I see a flash message that I need to fill out that field before I can submit the application" do
           within('#flash') do
             expect(page).to have_content('Must fill out description field before submitting application')
+            save_and_open_page
           end
         end
         it 'And I see my application is still "In Progress"' do

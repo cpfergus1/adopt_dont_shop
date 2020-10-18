@@ -16,11 +16,8 @@ class AppsController < ApplicationController
 
   def update
     @application = App.find(params[:id])
-    require "pry"; binding.pry
     if params[:description] && @application.pets != []
-      require "pry"; binding.pry
       if params[:description] == ""
-        require "pry"; binding.pry
         redirect_to "/apps/#{params[:id]}", flash: {notice: "Must fill out description field before submitting application"}
       else
       @application.update(description: params[:description],
