@@ -16,10 +16,15 @@ class AppsController < ApplicationController
 
   def update
     @application = App.find(params[:id])
-    @pet = Pet.find(params[:pet_id])
-    check_existence = @application.pets.select(@pet.id) 
-    if check_existence == []
-      @application.pets << @pet
+    if params[:description] && @application.pets != []
+      @application.update(description: params[:description],
+                          status: params[:status])
+      @application.save
+    else
+      check_existence = @application.pets.where(id: params[:pet_id])
+      if params[:pet_id] != '' && check_existence == []
+        @application.pets << Pet.find(params[:pet_id])
+      end
     end
     redirect_to "/apps/#{params[:id]}"
   end
