@@ -75,4 +75,31 @@ describe "As a visitor" do
       end
     end
   end
+  #User Story 23, Partial Matches for Pet Names
+
+  describe "When visit an application show page" do
+    describe "And I search for Pets by name" do
+      it "Then I see any pet whose name PARTIALLY matches my search" do
+        #For example, if I search for "fluff", my search would match pets with names "fluffy", "fluff", and "mr. fluff"
+        visit "/apps/#{@application.id}"
+        fill_in :name, with: "J"
+        click_on "Submit"
+        expect(page).to have_content(@pet.name)
+        expect(page).to have_content(@pet1.name)
+      end
+    end
+  end
+  #User Story 24, Case Insensitive Matches for Pet Names
+  describe "When visit an application show page" do
+    describe "And I search for Pets by name" do
+      it "Then my search is case insensitive" do
+        visit "/apps/#{@application.id}"
+        fill_in :name, with: "j"
+        click_on "Submit"
+        expect(page).to have_content(@pet.name)
+        expect(page).to have_content(@pet1.name)
+        #For example, if I search for "fluff", my search would match pets with names "Fluffy", "FLUFF", and "Mr. FlUfF"
+      end
+    end
+  end
 end

@@ -14,7 +14,7 @@
       <img src="./assets/0.12.3/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" class="hide">
-      <div class="timestamp">Generated <abbr class="timeago" title="2020-10-18T20:16:03-03:00">2020-10-18T20:16:03-03:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2020-10-18T21:38:50-03:00">2020-10-18T21:38:50-03:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -30,7 +30,7 @@
      covered at
      <span class="covered_strength">
        <span class="green">
-         1.55
+         1.57
        </span>
     </span> hits/line
     )
@@ -43,8 +43,8 @@
   </div>
 
   <div class="t-line-summary">
-    <b>989</b> relevant lines,
-    <span class="green"><b>986</b> lines covered</span> and
+    <b>1004</b> relevant lines,
+    <span class="green"><b>1001</b> lines covered</span> and
     <span class="red"><b>3</b> lines missed. </span>
     (<span class="green">
   99.7%
@@ -88,7 +88,7 @@
             <td class="cell--number">29</td>
             <td class="cell--number">28</td>
             <td class="cell--number">1</td>
-            <td class="cell--number">6.21</td>
+            <td class="cell--number">6.90</td>
             
           </tr>
         
@@ -392,22 +392,22 @@
           <tr class="t-file">
             <td class="strong t-file__name"><a href="#e17a5a6a69e33bb3419ffcfd673335ff44b55ad4" class="src_link" title="spec/features/apps/show_spec.rb">spec/features/apps/show_spec.rb</a></td>
             <td class="green strong cell--number t-file__coverage">100.00 %</td>
-            <td class="cell--number">78</td>
-            <td class="cell--number">35</td>
-            <td class="cell--number">35</td>
+            <td class="cell--number">105</td>
+            <td class="cell--number">51</td>
+            <td class="cell--number">51</td>
             <td class="cell--number">0</td>
-            <td class="cell--number">1.29</td>
+            <td class="cell--number">1.39</td>
             
           </tr>
         
           <tr class="t-file">
             <td class="strong t-file__name"><a href="#23d52c0e924bc48eb25ddc3d0ebf2c81ab3184cd" class="src_link" title="spec/features/apps/update_spec.rb">spec/features/apps/update_spec.rb</a></td>
             <td class="green strong cell--number t-file__coverage">100.00 %</td>
-            <td class="cell--number">121</td>
-            <td class="cell--number">62</td>
-            <td class="cell--number">62</td>
+            <td class="cell--number">120</td>
+            <td class="cell--number">61</td>
+            <td class="cell--number">61</td>
             <td class="cell--number">0</td>
-            <td class="cell--number">2.29</td>
+            <td class="cell--number">2.31</td>
             
           </tr>
         
@@ -805,8 +805,8 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="25" data-linenumber="7">
-            <span class="hits">25</span>
+          <li class="covered" data-hits="29" data-linenumber="7">
+            <span class="hits">29</span>
             
 
             
@@ -816,8 +816,8 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="25" data-linenumber="8">
-            <span class="hits">25</span>
+          <li class="covered" data-hits="29" data-linenumber="8">
+            <span class="hits">29</span>
             
 
             
@@ -827,8 +827,8 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="25" data-linenumber="9">
-            <span class="hits">25</span>
+          <li class="covered" data-hits="29" data-linenumber="9">
+            <span class="hits">29</span>
             
 
             
@@ -838,24 +838,24 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="25" data-linenumber="10">
-            <span class="hits">25</span>
+          <li class="covered" data-hits="29" data-linenumber="10">
+            <span class="hits">29</span>
             
 
             
 
-            <code class="ruby">    if params[:name]</code>
+            <code class="ruby">    if params[:name] &amp;&amp; params[:name] != &quot;&quot;</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="3" data-linenumber="11">
-            <span class="hits">3</span>
+          <li class="covered" data-hits="5" data-linenumber="11">
+            <span class="hits">5</span>
             
 
             
 
-            <code class="ruby">      @targets = Pet.where(name: params[:name])</code>
+            <code class="ruby">      @targets = Pet.where(&#39;name ILIKE ?&#39;, &quot;%#{params[:name]}%&quot;)</code>
           </li>
         </div>
       
@@ -871,8 +871,8 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="22" data-linenumber="13">
-            <span class="hits">22</span>
+          <li class="covered" data-hits="24" data-linenumber="13">
+            <span class="hits">24</span>
             
 
             
@@ -7710,8 +7710,8 @@
     
 
     <div class="t-line-summary">
-      <b>35</b> relevant lines.
-      <span class="green"><b>35</b> lines covered</span> and
+      <b>51</b> relevant lines.
+      <span class="green"><b>51</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
 
@@ -7778,8 +7778,8 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="3" data-linenumber="6">
-            <span class="hits">3</span>
+          <li class="covered" data-hits="5" data-linenumber="6">
+            <span class="hits">5</span>
             
 
             
@@ -7833,8 +7833,8 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="3" data-linenumber="11">
-            <span class="hits">3</span>
+          <li class="covered" data-hits="5" data-linenumber="11">
+            <span class="hits">5</span>
             
 
             
@@ -7888,8 +7888,8 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="3" data-linenumber="16">
-            <span class="hits">3</span>
+          <li class="covered" data-hits="5" data-linenumber="16">
+            <span class="hits">5</span>
             
 
             
@@ -7954,8 +7954,8 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="3" data-linenumber="22">
-            <span class="hits">3</span>
+          <li class="covered" data-hits="5" data-linenumber="22">
+            <span class="hits">5</span>
             
 
             
@@ -8031,8 +8031,8 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="3" data-linenumber="29">
-            <span class="hits">3</span>
+          <li class="covered" data-hits="5" data-linenumber="29">
+            <span class="hits">5</span>
             
 
             
@@ -8576,6 +8576,303 @@
 
             
 
+            <code class="ruby">  #User Story 23, Partial Matches for Pet Names</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="79">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="80">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">  describe &quot;When visit an application show page&quot; do</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="81">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    describe &quot;And I search for Pets by name&quot; do</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="82">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">      it &quot;Then I see any pet whose name PARTIALLY matches my search&quot; do</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="83">
+            
+            
+
+            
+
+            <code class="ruby">        #For example, if I search for &quot;fluff&quot;, my search would match pets with names &quot;fluffy&quot;, &quot;fluff&quot;, and &quot;mr. fluff&quot;</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="84">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">        visit &quot;/apps/#{@application.id}&quot;</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="85">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">        fill_in :name, with: &quot;J&quot;</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="86">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">        click_on &quot;Submit&quot;</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="87">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">        expect(page).to have_content(@pet.name)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="88">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">        expect(page).to have_content(@pet1.name)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="89">
+            
+            
+
+            
+
+            <code class="ruby">      end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="90">
+            
+            
+
+            
+
+            <code class="ruby">    end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="91">
+            
+            
+
+            
+
+            <code class="ruby">  end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="92">
+            
+            
+
+            
+
+            <code class="ruby">  #User Story 24, Case Insensitive Matches for Pet Names</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="93">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">  describe &quot;When visit an application show page&quot; do</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="94">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    describe &quot;And I search for Pets by name&quot; do</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="95">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">      it &quot;Then my search is case insensitive&quot; do</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="96">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">        visit &quot;/apps/#{@application.id}&quot;</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="97">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">        fill_in :name, with: &quot;j&quot;</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="98">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">        click_on &quot;Submit&quot;</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="99">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">        expect(page).to have_content(@pet.name)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="100">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">        expect(page).to have_content(@pet1.name)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="101">
+            
+            
+
+            
+
+            <code class="ruby">        #For example, if I search for &quot;fluff&quot;, my search would match pets with names &quot;Fluffy&quot;, &quot;FLUFF&quot;, and &quot;Mr. FlUfF&quot;</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="102">
+            
+            
+
+            
+
+            <code class="ruby">      end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="103">
+            
+            
+
+            
+
+            <code class="ruby">    end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="104">
+            
+            
+
+            
+
+            <code class="ruby">  end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="105">
+            
+            
+
+            
+
             <code class="ruby">end</code>
           </li>
         </div>
@@ -8599,8 +8896,8 @@
     
 
     <div class="t-line-summary">
-      <b>62</b> relevant lines.
-      <span class="green"><b>62</b> lines covered</span> and
+      <b>61</b> relevant lines.
+      <span class="green"><b>61</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
 
@@ -9833,18 +10130,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="112">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">            save_and_open_page</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="113">
+          <li class="never" data-hits="" data-linenumber="112">
             
             
 
@@ -9855,7 +10141,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="114">
+          <li class="never" data-hits="" data-linenumber="113">
             
             
 
@@ -9866,7 +10152,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="115">
+          <li class="covered" data-hits="1" data-linenumber="114">
             <span class="hits">1</span>
             
 
@@ -9877,7 +10163,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="116">
+          <li class="covered" data-hits="1" data-linenumber="115">
             <span class="hits">1</span>
             
 
@@ -9888,7 +10174,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="117">
+          <li class="never" data-hits="" data-linenumber="116">
             
             
 
@@ -9899,7 +10185,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="118">
+          <li class="never" data-hits="" data-linenumber="117">
             
             
 
@@ -9910,7 +10196,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="119">
+          <li class="never" data-hits="" data-linenumber="118">
             
             
 
@@ -9921,7 +10207,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="120">
+          <li class="never" data-hits="" data-linenumber="119">
             
             
 
@@ -9932,7 +10218,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="121">
+          <li class="never" data-hits="" data-linenumber="120">
             
             
 

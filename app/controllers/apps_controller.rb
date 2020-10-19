@@ -7,8 +7,8 @@ class AppsController < ApplicationController
     @application = App.find(params[:id])
     @user = @application.user
     @pets = @application.pets
-    if params[:name]
-      @targets = Pet.where(name: params[:name])
+    if params[:name] && params[:name] != ""
+      @targets = Pet.where('name ILIKE ?', "%#{params[:name]}%")
     else
       @targets = []
     end

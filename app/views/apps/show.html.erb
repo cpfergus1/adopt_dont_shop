@@ -19,7 +19,7 @@
   <tr>
     <td> Pets to be adopted:</td>
     <td> <% @pets.each do |pet| %>
-        <a href="/pets/<%=pet.id %>" id = <%= pet.name%>> <%= pet.name %> </a>
+        <a href="/pets/<%=pet.id %>" id = "<%= pet.name%>"> <%= pet.name %> </a>
         <% end %>
     </td>
   </tr>
@@ -38,11 +38,11 @@
 <section align = "center" id ='AddPet'>
 <form action="/apps/<%= @application.id %>" method="get">
   <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-  <input type="hidden" name="_method" value="post">
   <input type="hidden" name="app_id" value="<%= @application.id %>">
   <p>Add a Pet to this Application:</p>
   <input type="text" name= "name" placeholder="Search Pets">
   <label></label><input type='submit' value='Submit'/>
+  </form>
   <br>
     <table class ="Show">
       <% @targets.each do |target| %>
@@ -54,18 +54,18 @@
     </table>
   </section>
   <% end %>
+
   <% if @pets != [] %>
-    <section id = "submit_app">
-    <section align = "center">
+    <section id = "submit_app" align="CENTER">
       <form action="/apps/<%= @application.id %>" method="post">
       <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-      <input type="hidden" name="_method" value="PATCH">
+      <input type="hidden" name="_method" value="patch">
       <input type="hidden" name="app_id" value="<%= @application.id %>">
       <input type="hidden" name="status" value="Pending">
 
       <p>Why would you make a good pet owner:</p>
       <input type="text" name= "description">
       <label></label><input type='submit' value='Submit Application'/>
-
-      </section>
+      </form>
+    </section>
   <% end %>
