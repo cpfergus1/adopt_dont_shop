@@ -11,6 +11,10 @@ class AdminController < ApplicationController
     @petapp = @pet.find_petapp(@application.id)
     @petapp.update(status: params[:status])
     @petapp.save
+    if @application.app_approved
+      @application.update(status: params[:status])
+      @application.save
+    end
     redirect_to "/admin/apps/#{@application.id}"
   end
 end

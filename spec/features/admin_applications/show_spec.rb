@@ -84,5 +84,21 @@ describe "As a visitor" do
         end
       end
     end
+    #User Story 27, All Pets Accepted on an Application
+    describe 'And I approve all pets for an application' do
+      describe 'Then I am taken back to the admin application show page' do
+        it 'And I see the applications status has changed to "Approved"' do
+          within("##{@pet.name}") do
+            click_on("Approve")
+          end
+          within("##{@pet1.name}") do
+            click_on("Approve")
+          end
+          within("#status") do
+            expect(page).to have_content("Approved")
+          end
+        end
+      end
+    end
   end
 end
