@@ -90,13 +90,13 @@ describe 'As a visitor' do
                                        user_name: @user.name,
                                        shelter_id: @shelter2.id,
                                        user_id: @user.id)
-        @review = Review.create!(title: "that review",
+        @review1 = Review.create!(title: "that review",
                                        rating: 4.0,
                                        content: "This review needs work",
                                        user_name: @user.name,
                                        shelter_id: @shelter2.id,
                                        user_id: @user.id)
-        @review = Review.create!(title: "those reviews",
+        @review2 = Review.create!(title: "those reviews",
                                        rating: 2.0,
                                        content: "This review needs work",
                                        user_name: @user.name,
@@ -124,4 +124,6 @@ describe 'As a visitor' do
           end
         end
       end
+
+
     end

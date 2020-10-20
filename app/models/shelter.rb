@@ -1,6 +1,6 @@
 class Shelter < ApplicationRecord
-  has_many :pets, dependent: :delete_all
-  has_many :reviews, dependent: :delete_all
+  has_many :pets, dependent: :destroy
+  has_many :reviews, dependent: :destroy
   validates_presence_of :name
   validates_presence_of :address
   validates_presence_of :city
@@ -19,5 +19,13 @@ class Shelter < ApplicationRecord
     self.pets.sum do |pet|
       pet.apps
     end
+  end
+
+  def pets_pending?
+    pets.map do |pet|
+      pet.apps.map do |app|
+        app.status
+      end
+    end.flatten.any?("Pending")
   end
 end

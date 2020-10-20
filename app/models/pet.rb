@@ -1,7 +1,7 @@
 class Pet < ApplicationRecord
   belongs_to :shelter
-  has_many :pet_apps
-  has_many :apps, through: :pet_apps
+  has_many :pet_apps, dependent: :destroy
+  has_many :apps, through: :pet_apps, dependent: :destroy
   validates_presence_of :name
   validates_presence_of :image
   validates_presence_of :age
@@ -17,6 +17,10 @@ class Pet < ApplicationRecord
   def already_approved?
     apps.map{|app| app.status}.any?("Approved")
   end
+
+
+
+
   # def self.search(search)
   #   if search
   #     Pet.find_by(name: search)

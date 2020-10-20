@@ -1,6 +1,6 @@
 class App <  ApplicationRecord
-  has_many :pet_apps
-  has_many :pets, through: :pet_apps
+  has_many :pet_apps, dependent: :destroy
+  has_many :pets, through: :pet_apps, dependent: :destroy
   belongs_to :user
   validates_presence_of :status
 
@@ -14,5 +14,9 @@ class App <  ApplicationRecord
 
   def app_rejected
     find_petapp.map{|pet| pet.status}.any?("Rejected")
+  end
+
+  def self.pending?
+
   end
 end
