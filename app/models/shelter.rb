@@ -10,4 +10,14 @@ class Shelter < ApplicationRecord
   def petcount
     self.pets.count
   end
+
+  def review_avg
+    self.reviews.average(:rating)
+  end
+
+  def app_count
+    self.pets.sum do |pet|
+      pet.apps
+    end
+  end
 end

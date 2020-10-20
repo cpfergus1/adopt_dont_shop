@@ -7,7 +7,11 @@
 
 <body>
 <h2 align="center"><%= @shelter.name %></h2>
-<p style="padding: 0px" align="center">Shelter ID:  <%= @shelter.id%><br>
+<h4 align="center" id="average">Averge Shelter Rating: <%= @shelter.review_avg %></h4>
+<p style="padding: 0px" align="center">Shelter ID:  <%= @shelter.id%>
+  <br>
+  <h3 align="center" id="pet_count">(Pets in the shelter: <%="#{@shelter.petcount}"%> )</h3>
+  <br>
 <h4 align="center">Shelter Location:</h4>
 <table class ='Show'>
   <tr>
@@ -37,6 +41,9 @@
 </table>
 <br>
 <br>
+<h4 align="center" id="app_count">Number of Applications: <%= @shelter.app_count %></h4>
+<br>
+
 
 <%= link_to 'New Review', "/shelters/#{@shelter.id}/reviews/new" %>
 
