@@ -7,7 +7,11 @@
 
 <body>
 <img src=<%="#{@pet.image}"%> alt=<%= "#{@pet.name}" %> height=300 width=300 class="Center"><br>
-<h2 align="center"><%= @pet.name %></h2>
+<section align="center">
+  <h2><%= @pet.name %></h2>
+
+  <a href="/pets/<%="#{@pet.id}"%>/apps">View Applications</a>
+</section>
 <table class= "Show">
   <tr>
     <td>Approximate Age:</td>
