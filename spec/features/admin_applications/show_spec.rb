@@ -37,7 +37,6 @@ describe "As a visitor" do
     describe "For every pet that the application is for, I see a button to approve the application for that specific pet" do
       describe "When I click that button" do
         it "Then I'm taken back to the admin application show page" do
-          save_and_open_page
           within("##{@pet.name}") do
             expect(page).to have_link("Approve")
           end
@@ -56,7 +55,31 @@ describe "As a visitor" do
             click_on("Approve")
             expect(page).to have_content("Approved")
           end
-          save_and_open_page
+          expect(current_path).to eq("/admin/apps/#{@application.id}")
+        end
+      end
+    end
+    describe "For every pet that the application is for, I see a button to reject the application for that specific pet" do
+      describe "When I click that button" do
+        it "Then I'm taken back to the admin application show page" do
+          within("##{@pet.name}") do
+            expect(page).to have_link("Reject")
+          end
+          within("##{@pet1.name}") do
+            expect(page).to have_link("Reject")
+          end
+        end
+        it "And next to the pet that I rejected, I do not see a button to approve or reject this pet" do
+          within("##{@pet.name}") do
+            click_on("Reject")
+            expect(page).to_not have_link("Reject")
+          end
+        end
+        it"And instead I see an indicator next to the pet that they have been rejected" do
+          within("##{@pet.name}") do
+            click_on("Reject")
+            expect(page).to have_content("Rejected")
+          end
           expect(current_path).to eq("/admin/apps/#{@application.id}")
         end
       end
