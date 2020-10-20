@@ -19,6 +19,8 @@
               Approved
             <% elsif pet.find_petapp(@application.id).status == "Rejected" %>
               Rejected
+            <% elsif pet.already_approved? %>
+              This pet has already been approved for adoption on another application
             <%else%>
               <%= link_to 'Approve', {:action => "update",:pet_id => pet.id, :app_id=> @application.id, :status => "Approved"}, method: "patch", class:"button"%>
               <%= link_to 'Reject', {:action => "update",:pet_id => pet.id, :app_id=> @application.id, :status => "Rejected"}, method: "patch", class:"button"%>
