@@ -58,3 +58,24 @@ describe "As a visitor" do
     end
   end
 end
+#User Story 31, Pet Applications Index Page When No Applications
+
+describe "As a visitor" do
+  describe "When I visit a pet applications index page for a pet that has no applications on them" do
+    it "I see a message saying that there are no applications for this pet yet" do
+      @shelter2 = Shelter.create(name: 'Shelter5',
+        address: 'different',
+        city: 'city',
+        state: 'state',
+        zip: '8')
+      @pet = @shelter2.pets.create(image: 'image',
+        name: 'Joey',
+        description: 'description',
+        age: '1',
+        sex: 'sex',
+        status: 'status')
+      visit "/pets/#{@pet.id}/apps"
+      expect(page).to have_content("There are no applications for this pet yet!")
+    end
+  end
+end
