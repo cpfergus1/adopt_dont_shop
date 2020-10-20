@@ -124,5 +124,28 @@ describe "As a visitor" do
         end
       end
     end
+
+    describe 'When a pet has an "Approved" application on them' do
+      before(:each) do
+        @application2 = @user.apps.create(description: "I'm da best",
+          status: 'Approved')
+          PetApp.create!(pet: @pet, app: @application2)
+      end
+      describe 'And when I the pet has a "Pending" application on them' do
+        describe 'And I visit the admin application show page for pending application' do
+          it 'Then next to the pet I do not see a button to approve or reject them' do
+            within("##{@pet.name}") do
+              expect(page).to_not have_link("Approve")
+              expect(page).to_not have_link("Rejected")
+            end
+          end
+          it 'And instead I see a message that this pet has been approved for adoption' do
+            within("##{@pet.name}") do
+              expect(page).to have_content("This pet has already been approved for adoption on another application")
+            end
+          end
+        end
+      end
+    end
   end
 end
