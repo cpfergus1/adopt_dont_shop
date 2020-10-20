@@ -91,11 +91,35 @@ describe "As a visitor" do
           within("##{@pet.name}") do
             click_on("Approve")
           end
+          within("#status") do
+            expect(page).to_not have_content("Approved")
+          end
           within("##{@pet1.name}") do
             click_on("Approve")
           end
           within("#status") do
             expect(page).to have_content("Approved")
+          end
+        end
+      end
+    end
+    describe 'And I reject one or more pets for the application' do
+      describe 'And I approve all other pets on the application' do
+        describe 'Then I am taken back to the admin application show page' do
+          it 'And I see the applications status has changed to "Rejected"' do
+            within("##{@pet.name}") do
+              click_on("Approve")
+            end
+            within("#status") do
+              expect(page).to_not have_content("Approved")
+              expect(page).to_not have_content("Rejected")
+            end
+            within("##{@pet1.name}") do
+              click_on("Reject")
+            end
+            within("#status") do
+              expect(page).to have_content("Rejected")
+            end
           end
         end
       end

@@ -12,7 +12,11 @@ class AdminController < ApplicationController
     @petapp.update(status: params[:status])
     @petapp.save
     if @application.app_approved
-      @application.update(status: params[:status])
+      @application.update(status: "Approved")
+      @application.save
+    end
+    if @application.app_rejected
+      @application.update(status: "Rejected")
       @application.save
     end
     redirect_to "/admin/apps/#{@application.id}"
