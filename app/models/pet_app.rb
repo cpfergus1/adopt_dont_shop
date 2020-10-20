@@ -3,4 +3,6 @@ class PetApp < ApplicationRecord
   belongs_to :app
 
 
+  
+
 end

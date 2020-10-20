@@ -34,4 +34,5 @@ Rails.application.routes.draw do
   get '/apps/:id', to: 'apps#show'
 
   get '/admin/apps/:id', to: "admin#show"
+  patch '/admin/apps/:id', to: "admin#update"
 end

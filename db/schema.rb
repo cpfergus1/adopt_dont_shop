@@ -10,18 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_17_190956) do
+ActiveRecord::Schema.define(version: 2020_10_19_214831) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
-  create_table "applications", force: :cascade do |t|
-    t.string "user_name"
-    t.string "user_address"
-    t.string "description"
-    t.string "pet_names"
-    t.string "status"
-  end
 
   create_table "apps", force: :cascade do |t|
     t.string "description"
@@ -39,6 +31,7 @@ ActiveRecord::Schema.define(version: 2020_10_17_190956) do
     t.datetime "updated_at", null: false
     t.bigint "pet_id"
     t.bigint "app_id"
+    t.string "status"
     t.index ["app_id"], name: "index_pet_apps_on_app_id"
     t.index ["pet_id"], name: "index_pet_apps_on_pet_id"
   end

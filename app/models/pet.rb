@@ -10,6 +10,9 @@ class Pet < ApplicationRecord
   validates_presence_of :shelter_id
   validates_presence_of :status
 
+  def find_petapp(app_id)
+    PetApp.find_by(pet_id: self.id, app_id: app_id)
+  end
   # def self.search(search)
   #   if search
   #     Pet.find_by(name: search)

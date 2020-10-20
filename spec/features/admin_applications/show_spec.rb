@@ -37,6 +37,7 @@ describe "As a visitor" do
     describe "For every pet that the application is for, I see a button to approve the application for that specific pet" do
       describe "When I click that button" do
         it "Then I'm taken back to the admin application show page" do
+          save_and_open_page
           within("##{@pet.name}") do
             expect(page).to have_link("Approve")
           end
@@ -55,7 +56,8 @@ describe "As a visitor" do
             click_on("Approve")
             expect(page).to have_content("Approved")
           end
-          expect(current_path).to eq("admin/apps/#{@application.id}")
+          save_and_open_page
+          expect(current_path).to eq("/admin/apps/#{@application.id}")
         end
       end
     end
