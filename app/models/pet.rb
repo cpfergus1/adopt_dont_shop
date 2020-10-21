@@ -18,14 +18,9 @@ class Pet < ApplicationRecord
     apps.map{|app| app.status}.any?("Approved")
   end
 
-
-
-
-  # def self.search(search)
-  #   if search
-  #     Pet.find_by(name: search)
-  #   else
-  #     Pet.all
-  #   end
-  # end
+  def app_approved?
+    apps.map do |app|
+      app.status
+    end.any?("Approved")
+  end
 end

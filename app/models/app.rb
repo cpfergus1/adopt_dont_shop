@@ -15,8 +15,4 @@ class App <  ApplicationRecord
   def app_rejected
     find_petapp.map{|pet| pet.status}.any?("Rejected")
   end
-
-  def self.pending?
-
-  end
 end

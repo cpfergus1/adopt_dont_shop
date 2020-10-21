@@ -28,4 +28,12 @@ class Shelter < ApplicationRecord
       end
     end.flatten.any?("Pending")
   end
+
+  def pets_approved?
+    pets.map do |pet|
+      pet.apps.map do |app|
+        app.status
+      end
+    end.flatten.any?("Approved")
+  end
 end
